@@ -28,13 +28,11 @@ function createCard() {
                                 <img
                                     src=${deskPhoto} 
                                     alt=${alt} 
-                                    decoding="auto"
-                                    class="x5yr21d xu96u03 x10l6tqk x13vifvy x87ps6o xh8yej3"
                                     width="250" 
                                     height="200" 
                                     loading="lazy"
                                     sizes="226.8046875px"
-                                    / >
+                                />
                             </picture>
                         </div>
                     </div>
