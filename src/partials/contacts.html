@@ -1,56 +1,53 @@
-<section class="section">
+<section class="section" id="contacts">
     <div class="container">
-        <h2 class=contact__title>Контакти</h2>
+        <h2 class="section-title">Контакти:</h2>
         <div class=contact__contentWrapper>
-            <ul class=contact__socialList>
-                <li class=contact__socialItem>
-                    <h3 class=contact__socialTitle>Телефон:</h3>
-                    <div>
-                        <a class=contact__link href="tel:+380983974983">
-                            <div class=iconWrapper>
-                                <PhoneIcon class=contact__linkIcon />
-                            </div>
-                            <span>380983974983</span>
-                        </a>
-                        <a class=contact__link href="tel:+380981234567">
-                            <div class=iconWrapper>
-                                <PhoneIcon class=contact__linkIcon />
-                            </div>
-                            <span>38 (093) 12 34 567</span>
-                        </a>
-                    </div>
+            <ul class=contact-list>
+                <li class=contact-item>
+                    <h3 class=contact-title>Телефон:</h3>
+                    <a class=contact__link href="tel:+380983974983" target="_blank">
+                        <span>380983974983</span>
+                    </a>
+                    <a class=contact__link href="tel:+380981234567" target="_blank">
+                        <span>380931234567</span>
+                    </a>
                 </li>
-                <li class=contact__socialItem>
-                    <h3 class=contact__socialTitle>E-mail:</h3>
-                    <a class=contact__link href="mailto:andrew.506@ukr.net">
-                        <div class=iconWrapper>
-                            <SmsIcon class=contact__linkIcon />
-                        </div>
+                <li class=contact-item>
+                    <h3 class=contact-title>E-mail:</h3>
+                    <a class=contact__link href="mailto:andrew.506@ukr.net" target="_blank">
                         <span>andrew.506@ukr.net</span>
                     </a>
                 </li>
-                <li class=contact__socialItem>
-                    <h3 class=contact__socialTitle>Адреса:</h3>
-                    <a class=contact__link href="https://maps.app.goo.gl/4wEMGGNfCrechPkS6" target="_blank"
-                        rel="noopener noreferrer nofollow">
-                        <div class=iconWrapper>
-                            <MapIcon class=contact__linkIcon />
-                        </div>
+                <li class=contact-item>
+                    <h3 class=contact-title>Адреса:</h3>
+                    <a class=contact__link href="https://maps.app.goo.gl/4wEMGGNfCrechPkS6" target="_blank" rel="noopener noreferrer nofollow">
                         <span>
                             Україна, м. Київ, вул. Джохара Дудаєва, 6
                         </span>
                     </a>
                 </li>
-                <li class=contact__socialItem>
-                    <h3 class=contact__socialTitle>
-                        Соціальні мережі:
-                    </h3>
+                <li class=contact-item>
+                    <h3 class=contact-title>Соціальні мережі:</h3>
                     <div class=contact__socialLinkWrapper>
-                        <a aria-label="open facebook" class=contact__socialLink href="." rel="noopener noreferrer nofollow">
-                            <FacebookIcon class={contactSocialIcon} />
+                        <a aria-label="open facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100021661202474">
+                            <svg class="social__svg" width="20px" height="20px">
+                                <use href="./images/icons.svg#icon-facebook"></use>
+                            </svg>
+                            <span class="tooltip">Facebook</span>
                         </a>
-                        <a aria-label="open instargam" class=contact__socialLink href="." rel="noopener noreferrer nofollow">
-                            <InstagramIcon class={contactSocialIcon} />
+                        
+                        <a aria-label="open instagram" target="_blank" href="https://www.instagram.com/switlana_cake/">
+                            <svg class="social__svg" width="20px" height="20px">
+                                <use href="./images/icons.svg#icon-instagram"></use>
+                            </svg>
+                            <span class="tooltip">Instagram</span>
+                        </a>
+
+                        <a aria-label="open telegram" target="_blank"  href="">
+                            <svg class="social__svg" width="30px" height="30px">
+                                <use href="./images/icons.svg#icon-telegram"></use>
+                            </svg>
+                            <span class="tooltip">Telegram</span>
                         </a>
                     </div>
                 </li>
@@ -85,6 +82,5 @@
                 </button>
             </form>
         </div>
-           
     </div>
 </section>

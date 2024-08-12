@@ -18,28 +18,28 @@
     }
 }
 
-.contact__title {
-    margin-bottom: 24px;
+// .contact__title {
+//     margin-bottom: 24px;
 
-    text-align: center;
-    color: #173d33;
-    font-family: Oswald;
-    font-size: 28px;
-    line-height: 1;
-    text-transform: uppercase;
+//     text-align: center;
+//     color: #173d33;
+//     font-family: Oswald;
+//     font-size: 28px;
+//     line-height: 1;
+//     text-transform: uppercase;
 
-    @media screen and (min-width: 768px) {
-        margin-bottom: 40px;
+//     @media screen and (min-width: 768px) {
+//         margin-bottom: 40px;
 
-        font-size: 36px;
-    }
+//         font-size: 36px;
+//     }
 
-    @media screen and (min-width: 1280px) {
-        margin-bottom: 120px;
+//     @media screen and (min-width: 1280px) {
+//         margin-bottom: 120px;
 
-        font-size: 48px;
-    }
-}
+//         font-size: 48px;
+//     }
+// }
 
 .contact__contentWrapper {
     @media screen and (min-width: 768px) {
@@ -52,7 +52,7 @@
     }
 }
 
-.contact__socialList {
+.contact-list {
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
@@ -69,9 +69,9 @@
     }
 }
 
-.contact__socialItem {}
+.contact-item {}
 
-.contact__socialTitle {
+.contact-title {
     margin-bottom: 8px;
 
     color: #173d33;

@@ -15,6 +15,14 @@ body.modal-open {
   list-style: none;
 }
 
+.section-title {
+  text-align: center;
+  font-size: 60px;
+  line-height: 1.23em;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
 h1,
 h2,
 h3,
