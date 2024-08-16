@@ -5,7 +5,7 @@ let e;function t(e){return e&&e.__esModule?e.default:e}var n,r,o={};n="undefined
 // Support: QtWeb <=3.8.5, WebKit <=534.34, wkhtmltopdf tool <=0.12.5
 // Plus for old WebKit, typeof returns "function" for HTML collections
 // (e.g., `typeof document.getElementsByTagName("div") === "function"`). (gh-4756)
-return"function"==typeof e&&"number"!=typeof e.nodeType&&"function"!=typeof e.item},g=function(e){return null!=e&&e===e.window},v=e.document,y={type:!0,src:!0,nonce:!0,noModule:!0};function b(e,t,n){var r,o,i=(n=n||v).createElement("script");if(i.text=e,t)for(r in y)// Support: Firefox 64+, Edge 18+
+return"function"==typeof e&&"number"!=typeof e.nodeType&&"function"!=typeof e.item},g=function(e){return null!=e&&e===e.window},v=e.document,y={type:!0,src:!0,nonce:!0,noModule:!0};function x(e,t,n){var r,o,i=(n=n||v).createElement("script");if(i.text=e,t)for(r in y)// Support: Firefox 64+, Edge 18+
 // Some browsers don't support the "nonce" property on scripts.
 // On the other hand, just using `getAttribute` is not enough as
 // the `nonce` attribute is reset to an empty string whenever it
@@ -15,7 +15,7 @@ return"function"==typeof e&&"number"!=typeof e.nodeType&&"function"!=typeof e.it
 // The `node.getAttribute` check was added for the sake of
 // `jQuery.globalEval` so that it can fake a nonce-containing node
 // via an object.
-(o=t[r]||t.getAttribute&&t.getAttribute(r))&&i.setAttribute(r,o);n.head.appendChild(i).parentNode.removeChild(i)}function x(e){return null==e?e+"":"object"==typeof e||"function"==typeof e?l[c.call(e)]||"object":typeof e}/* global Symbol */// Defining this global in .eslintrc.json would create a danger of using the global
+(o=t[r]||t.getAttribute&&t.getAttribute(r))&&i.setAttribute(r,o);n.head.appendChild(i).parentNode.removeChild(i)}function b(e){return null==e?e+"":"object"==typeof e||"function"==typeof e?l[c.call(e)]||"object":typeof e}/* global Symbol */// Defining this global in .eslintrc.json would create a danger of using the global
 // unguarded in another place, it seems safer to define global only for this module
 var S="3.7.1",w=/HTML$/i,E=function(e,t){// The jQuery object is actually just the init constructor 'enhanced'
 // Need init if jQuery is called (just allow error to be thrown if not included)
@@ -23,7 +23,7 @@ return new E.fn.init(e,t)};function H(e){// Support: real iOS 8.2 only (not repr
 // `in` check used to prevent JIT error (gh-2145)
 // hasOwn isn't used here due to false negatives
 // regarding Nodelist length in IE
-var t=!!e&&"length"in e&&e.length,n=x(e);return!(m(e)||g(e))&&("array"===n||0===t||"number"==typeof t&&t>0&&t-1 in e)}function T(e,t){return e.nodeName&&e.nodeName.toLowerCase()===t.toLowerCase()}E.fn=E.prototype={// The current version of jQuery being used
+var t=!!e&&"length"in e&&e.length,n=b(e);return!(m(e)||g(e))&&("array"===n||0===t||"number"==typeof t&&t>0&&t-1 in e)}function T(e,t){return e.nodeName&&e.nodeName.toLowerCase()===t.toLowerCase()}E.fn=E.prototype={// The current version of jQuery being used
 jquery:S,constructor:E,// The default length of a jQuery object is 0
 length:0,toArray:function(){return i.call(this)},// Get the Nth element in the matched element set OR
 // Get the whole matched element set as a clean array
@@ -47,7 +47,7 @@ isReady:!0,error:function(e){throw Error(e)},noop:function(){},isPlainObject:fun
 !!e&&"[object Object]"===c.call(e)&&(!(t=o(e))||"function"==typeof// Objects with prototype are plain iff they were constructed by a global Object function
 (n=p.call(t,"constructor")&&t.constructor)&&d.call(n)===f))},isEmptyObject:function(e){var t;for(t in e)return!1;return!0},// Evaluates a script in a provided context; falls back to the global one
 // if not specified.
-globalEval:function(e,t,n){b(e,{nonce:t&&t.nonce},n)},each:function(e,t){var n,r=0;if(H(e))for(n=e.length;r<n&&!1!==t.call(e[r],r,e[r]);r++);else for(r in e)if(!1===t.call(e[r],r,e[r]))break;return e},// Retrieve the text value of an array of DOM nodes
+globalEval:function(e,t,n){x(e,{nonce:t&&t.nonce},n)},each:function(e,t){var n,r=0;if(H(e))for(n=e.length;r<n&&!1!==t.call(e[r],r,e[r]);r++);else for(r in e)if(!1===t.call(e[r],r,e[r]))break;return e},// Retrieve the text value of an array of DOM nodes
 text:function(e){var t,n="",r=0,o=e.nodeType;if(!o)for(;t=e[r++];)n+=E.text(t);return 1===o||11===o?e.textContent:9===o?e.documentElement.textContent:3===o||4===o?e.nodeValue:n},// results is for internal usage only
 makeArray:function(e,t){var n=t||[];return null!=e&&(H(Object(e))?E.merge(n,"string"==typeof e?[e]:e):s.call(n,e)),n},inArray:function(e,t,n){return null==t?-1:u.call(t,e,n)},isXMLDoc:function(e){var t=e&&e.namespaceURI,n=e&&(e.ownerDocument||e).documentElement;// Assume HTML when documentElement doesn't yet exist, such as inside
 // document fragments.
@@ -62,16 +62,16 @@ return a(s)},// A global GUID counter for objects
 guid:1,// jQuery.support is not used in Core but other projects attach their
 // properties to it so it needs to exist.
 support:h}),"function"==typeof Symbol&&(E.fn[Symbol.iterator]=r[Symbol.iterator]),// Populate the class2type map
-E.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),function(e,t){l["[object "+t+"]"]=t.toLowerCase()});var k=r.pop,R=r.sort,j=r.splice,A="[\\x20\\t\\r\\n\\f]",L=RegExp("^"+A+"+|((?:^|[^\\\\])(?:\\\\.)*)"+A+"+$","g");// Note: an element does not contain itself
+E.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),function(e,t){l["[object "+t+"]"]=t.toLowerCase()});var k=r.pop,R=r.sort,j=r.splice,A="[\\x20\\t\\r\\n\\f]",C=RegExp("^"+A+"+|((?:^|[^\\\\])(?:\\\\.)*)"+A+"+$","g");// Note: an element does not contain itself
 E.contains=function(e,t){var n=t&&t.parentNode;return e===n||!!(n&&1===n.nodeType&&// Support: IE 9 - 11+
 // IE doesn't have `contains` on SVG.
 (e.contains?e.contains(n):e.compareDocumentPosition&&16&e.compareDocumentPosition(n)))};// CSS string/identifier serialization
 // https://drafts.csswg.org/cssom/#common-serializing-idioms
-var _=/([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g;function C(e,t){return t?// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
-"\x00"===e?"�":e.slice(0,-1)+"\\"+e.charCodeAt(e.length-1).toString(16)+" ":"\\"+e}E.escapeSelector=function(e){return(e+"").replace(_,C)},function(){var t,n,o,a,l,c,d,f,m,g,y=s,b=E.expando,x=0,S=0,w=ee(),H=ee(),_=ee(),C=ee(),P=function(e,t){return e===t&&(l=!0),0},D="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",// https://www.w3.org/TR/css-syntax-3/#ident-token-diagram
-F="(?:\\\\[\\da-fA-F]{1,6}"+A+"?|\\\\[^\\r\\n\\f]|[\\w-]|[^\x00-\\x7f])+",q="\\["+A+"*("+F+")(?:"+A+// Operator (capture 2)
+var L=/([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g;function _(e,t){return t?// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
+"\x00"===e?"�":e.slice(0,-1)+"\\"+e.charCodeAt(e.length-1).toString(16)+" ":"\\"+e}E.escapeSelector=function(e){return(e+"").replace(L,_)},function(){var t,n,o,a,l,c,d,f,m,g,y=s,x=E.expando,b=0,S=0,w=ee(),H=ee(),L=ee(),_=ee(),P=function(e,t){return e===t&&(l=!0),0},D="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",// https://www.w3.org/TR/css-syntax-3/#ident-token-diagram
+F="(?:\\\\[\\da-fA-F]{1,6}"+A+"?|\\\\[^\\r\\n\\f]|[\\w-]|[^\x00-\\x7f])+",N="\\["+A+"*("+F+")(?:"+A+// Operator (capture 2)
 "*([*^$|!~]?=)"+A+// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
-"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+F+"))|)"+A+"*\\]",N=":("+F+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+q+")*)|.*)\\)|)",U=RegExp(A+"+","g"),O=RegExp("^"+A+"*,"+A+"*"),M=RegExp("^"+A+"*([>+~]|"+A+")"+A+"*"),$=RegExp(A+"|>"),I=new RegExp(N),W=RegExp("^"+F+"$"),B={ID:RegExp("^#("+F+")"),CLASS:RegExp("^\\.("+F+")"),TAG:RegExp("^("+F+"|[*])"),ATTR:RegExp("^"+q),PSEUDO:RegExp("^"+N),CHILD:RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+A+"*(even|odd|(([+-]|)(\\d*)n|)"+A+"*(?:([+-]|)"+A+"*(\\d+)|))"+A+"*\\)|)","i"),bool:RegExp("^(?:"+D+")$","i"),// For use in libraries implementing .is()
+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+F+"))|)"+A+"*\\]",q=":("+F+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+N+")*)|.*)\\)|)",U=RegExp(A+"+","g"),O=RegExp("^"+A+"*,"+A+"*"),M=RegExp("^"+A+"*([>+~]|"+A+")"+A+"*"),$=RegExp(A+"|>"),I=new RegExp(q),W=RegExp("^"+F+"$"),B={ID:RegExp("^#("+F+")"),CLASS:RegExp("^\\.("+F+")"),TAG:RegExp("^("+F+"|[*])"),ATTR:RegExp("^"+N),PSEUDO:RegExp("^"+q),CHILD:RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+A+"*(even|odd|(([+-]|)(\\d*)n|)"+A+"*(?:([+-]|)"+A+"*(\\d+)|))"+A+"*\\)|)","i"),bool:RegExp("^(?:"+D+")$","i"),// For use in libraries implementing .is()
 // We use this for POS matching in `select`
 needsContext:RegExp("^"+A+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+A+"*((?:-\\d)?\\d*)"+A+"*\\)|)(?=[^-]|$)","i")},z=/^(?:input|select|textarea|button)$/i,X=/^h\d$/i,Q=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,V=/[+~]/,// https://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 J=RegExp("\\\\[\\da-fA-F]{1,6}"+A+"?|\\\\([^\\r\\n\\f])","g"),G=function(e,t){var n="0x"+e.slice(1)-65536;return t||(n<0?String.fromCharCode(n+65536):String.fromCharCode(n>>10|55296,1023&n|56320))},// Support: IE 9 - 11+, Edge 12 - 18+
@@ -90,7 +90,7 @@ if(o=u[1]){// Document context
 if(9===g){if(!(a=t.getElementById(o)))return n;if(a.id===o)return y.call(n,a),n;// Element context
 }else // getElementById can match elements by name instead of ID
 if(d&&(a=d.getElementById(o))&&Z.contains(t,a)&&a.id===o)return y.call(n,a),n}else if(u[2])return y.apply(n,t.getElementsByTagName(e)),n;else if((o=u[3])&&t.getElementsByClassName)return y.apply(n,t.getElementsByClassName(o)),n}// Take advantage of querySelectorAll
-if(!C[e+" "]&&(!m||!m.test(e))){// qSA considers elements outside a scoping root when evaluating child or
+if(!_[e+" "]&&(!m||!m.test(e))){// qSA considers elements outside a scoping root when evaluating child or
 // descendant combinators, which is not what we want.
 // In such cases, we work around the behavior by prefixing every selector in the
 // list with an ID selector referencing the scope context.
@@ -98,9 +98,9 @@ if(!C[e+" "]&&(!m||!m.test(e))){// qSA considers elements outside a scoping root
 // as such selectors are not recognized by querySelectorAll.
 // Thanks to Andrew Dupont for this technique.
 if(p=e,d=t,1===g&&($.test(e)||M.test(e))){for(// Expand context for sibling selectors
-(d=V.test(e)&&ei(t.parentNode)||t)==t&&h.scope||((s=t.getAttribute("id"))?s=E.escapeSelector(s):t.setAttribute("id",s=b)),i=// Prefix every selector in the list
-(l=eu(e)).length;i--;)l[i]=(s?"#"+s:":scope")+" "+el(l[i]);p=l.join(",")}try{return y.apply(n,d.querySelectorAll(p)),n}catch(t){C(e,!0)}finally{s===b&&t.removeAttribute("id")}}}// All others
-return eh(e.replace(L,"$1"),t,n,r)}/**
+(d=V.test(e)&&ei(t.parentNode)||t)==t&&h.scope||((s=t.getAttribute("id"))?s=E.escapeSelector(s):t.setAttribute("id",s=x)),i=// Prefix every selector in the list
+(l=eu(e)).length;i--;)l[i]=(s?"#"+s:":scope")+" "+el(l[i]);p=l.join(",")}try{return y.apply(n,d.querySelectorAll(p)),n}catch(t){_(e,!0)}finally{s===x&&t.removeAttribute("id")}}}// All others
+return eh(e.replace(C,"$1"),t,n,r)}/**
  * Create key-value caches of limited size
  * @returns {function(string, object)} Returns the Object data after storing it on itself with
  *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
@@ -108,7 +108,7 @@ return eh(e.replace(L,"$1"),t,n,r)}/**
  */function ee(){var e=[];function t(r,o){return e.push(r+" ")>n.cacheLength&&delete t[e.shift()],t[r+" "]=o}return t}/**
  * Mark a function for special use by jQuery selector module
  * @param {Function} fn The function to mark
- */function et(e){return e[b]=!0,e}/**
+ */function et(e){return e[x]=!0,e}/**
  * Support testing using an element
  * @param {Function} fn Passed the created element and returns a boolean result
  */function en(e){var t=c.createElement("fieldset");try{return!!e(t)}catch(e){return!1}finally{t.parentNode&&t.parentNode.removeChild(t),// release memory in IE
@@ -175,7 +175,7 @@ n.find.CLASS=function(e,t){if(void 0!==t.getElementsByClassName&&f)return t.getE
 	---------------------------------------------------------------------- */// QSA and matchesSelector support
 m=[],// Build QSA regex
 // Regex strategy adopted from Diego Perini
-en(function(e){var t;d.appendChild(e).innerHTML="<a id='"+b+"' href='' disabled='disabled'></a><select id='"+b+"-\r\\' disabled='disabled'><option selected=''></option></select>",e.querySelectorAll("[selected]").length||m.push("\\["+A+"*(?:value|"+D+")"),e.querySelectorAll("[id~="+b+"-]").length||m.push("~="),e.querySelectorAll("a#"+b+"+*").length||m.push(".#.+[+~]"),e.querySelectorAll(":checked").length||m.push(":checked"),// Support: Windows 8 Native Apps
+en(function(e){var t;d.appendChild(e).innerHTML="<a id='"+x+"' href='' disabled='disabled'></a><select id='"+x+"-\r\\' disabled='disabled'><option selected=''></option></select>",e.querySelectorAll("[selected]").length||m.push("\\["+A+"*(?:value|"+D+")"),e.querySelectorAll("[id~="+x+"-]").length||m.push("~="),e.querySelectorAll("a#"+x+"+*").length||m.push(".#.+[+~]"),e.querySelectorAll(":checked").length||m.push(":checked"),// Support: Windows 8 Native Apps
 // The type and name attributes are restricted during .innerHTML assignment
 (t=c.createElement("input")).setAttribute("type","hidden"),e.appendChild(t).setAttribute("name","D"),// Support: IE 9 - 11+
 // IE's :disabled selector does not pick up the children of disabled fieldsets
@@ -208,10 +208,10 @@ var n=!e.compareDocumentPosition-!t.compareDocumentPosition;return n||(1&// Calc
 // two documents; shallow comparisons work.
 // eslint-disable-next-line eqeqeq
 e===c||e.ownerDocument==v&&Z.contains(v,e)?-1:t===c||t.ownerDocument==v&&Z.contains(v,t)?1:a?u.call(a,e)-u.call(a,t):0:4&n?-1:1)}),c}// Add button/input type pseudos
-for(t in Z.matches=function(e,t){return Z(e,null,null,t)},Z.matchesSelector=function(e,t){if(ea(e),f&&!C[t+" "]&&(!m||!m.test(t)))try{var n=g.call(e,t);// IE 9's matchesSelector returns false on disconnected nodes
+for(t in Z.matches=function(e,t){return Z(e,null,null,t)},Z.matchesSelector=function(e,t){if(ea(e),f&&!_[t+" "]&&(!m||!m.test(t)))try{var n=g.call(e,t);// IE 9's matchesSelector returns false on disconnected nodes
 if(n||h.disconnectedMatch||// As well, disconnected nodes are said to be in a document
 // fragment in IE 9
-e.document&&11!==e.document.nodeType)return n}catch(e){C(t,!0)}return Z(t,c,null,[e]).length>0},Z.contains=function(e,t){return(e.ownerDocument||e)!=c&&ea(e),E.contains(e,t)},Z.attr=function(e,t){// Set document vars if needed
+e.document&&11!==e.document.nodeType)return n}catch(e){_(t,!0)}return Z(t,c,null,[e]).length>0},Z.contains=function(e,t){return(e.ownerDocument||e)!=c&&ea(e),E.contains(e,t)},Z.attr=function(e,t){// Set document vars if needed
 // Support: IE 11+, Edge 17 - 18+
 // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 // two documents; shallow comparisons work.
@@ -246,11 +246,11 @@ e[0]=e[0].slice(0,t),e[2]=n.slice(0,t)),e.slice(0,3))}},filter:{TAG:function(e){
 if(i){for(;h;){for(p=t;p=p[h];)if(s?T(p,g):1===p.nodeType)return!1;// Reverse direction for :only-* (if we haven't yet done so)
 f=h="only"===e&&!f&&"nextSibling"}return!0}// non-xml :nth-child(...) stores cache data on `parent`
 if(f=[a?m.firstChild:m.lastChild],a&&v){for(y=(d=(l=// Seek `elem` from a previously-cached index
-(c=m[b]||(m[b]={}))[e]||[])[0]===x&&l[1])&&l[2],p=d&&m.childNodes[d];p=++d&&p&&p[h]||// Fallback to seeking `elem` from the start
-(y=d=0)||f.pop();)if(1===p.nodeType&&++y&&p===t){c[e]=[x,d,y];break}}else // xml :nth-child(...)
+(c=m[x]||(m[x]={}))[e]||[])[0]===b&&l[1])&&l[2],p=d&&m.childNodes[d];p=++d&&p&&p[h]||// Fallback to seeking `elem` from the start
+(y=d=0)||f.pop();)if(1===p.nodeType&&++y&&p===t){c[e]=[b,d,y];break}}else // xml :nth-child(...)
 // or :nth-last-child(...) or :nth(-last)?-of-type(...)
-if(v&&(y=d=(l=(c=t[b]||(t[b]={}))[e]||[])[0]===x&&l[1]),!1===y)// Use the same loop as above to seek `elem` from the start
-for(;(p=++d&&p&&p[h]||(y=d=0)||f.pop())&&(!((s?T(p,g):1===p.nodeType)&&++y)||(v&&((c=p[b]||(p[b]={}))[e]=[x,y]),p!==t)););return(// Incorporate the offset, then check against cycle size
+if(v&&(y=d=(l=(c=t[x]||(t[x]={}))[e]||[])[0]===b&&l[1]),!1===y)// Use the same loop as above to seek `elem` from the start
+for(;(p=++d&&p&&p[h]||(y=d=0)||f.pop())&&(!((s?T(p,g):1===p.nodeType)&&++y)||(v&&((c=p[x]||(p[x]={}))[e]=[b,y]),p!==t)););return(// Incorporate the offset, then check against cycle size
 (y-=o)===r||y%r==0&&y/r>=0)}}},PSEUDO:function(e,t){// pseudo-class names are case-insensitive
 // https://www.w3.org/TR/selectors/#pseudo-classes
 // Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
@@ -258,11 +258,11 @@ for(;(p=++d&&p&&p[h]||(y=d=0)||f.pop())&&(!((s?T(p,g):1===p.nodeType)&&++y)||(v&
 var r,o=n.pseudos[e]||n.setFilters[e.toLowerCase()]||Z.error("unsupported pseudo: "+e);return(// The user may use createPseudo to indicate that
 // arguments are needed to create the filter function
 // just as jQuery does
-o[b]?o(t):o.length>1?(r=[e,e,"",t],n.setFilters.hasOwnProperty(e.toLowerCase())?et(function(e,n){for(var r,i=o(e,t),a=i.length;a--;)r=u.call(e,i[a]),e[r]=!(n[r]=i[a])}):function(e){return o(e,0,r)}):o)}},pseudos:{// Potentially complex pseudos
+o[x]?o(t):o.length>1?(r=[e,e,"",t],n.setFilters.hasOwnProperty(e.toLowerCase())?et(function(e,n){for(var r,i=o(e,t),a=i.length;a--;)r=u.call(e,i[a]),e[r]=!(n[r]=i[a])}):function(e){return o(e,0,r)}):o)}},pseudos:{// Potentially complex pseudos
 not:et(function(e){// Trim the selector passed to compile
 // to avoid treating leading and trailing
 // spaces as combinators
-var t=[],n=[],r=ef(e.replace(L,"$1"));return r[b]?et(function(e,t,n,o){// Match elements unmatched by `matcher`
+var t=[],n=[],r=ef(e.replace(C,"$1"));return r[x]?et(function(e,t,n,o){// Match elements unmatched by `matcher`
 for(var i,a=r(e,null,o,[]),s=e.length;s--;)(i=a[s])&&(e[s]=!(t[s]=i))}):function(e,o,i){return t[0]=e,r(t,null,i,n),// Don't keep the element
 // (see https://github.com/jquery/sizzle/issues/299)
 t[0]=null,!n.pop()}}),has:et(function(e){return function(t){return Z(e,t).length>0}}),contains:et(function(e){return e=e.replace(J,G),function(t){return(t.textContent||E.text(t)).indexOf(e)>-1}}),// "Whether an element is represented by a :lang() selector
@@ -298,38 +298,38 @@ first:eo(function(){return[0]}),last:eo(function(e,t){return[t-1]}),eq:eo(functi
  */function(e){return function(t){return(T(t,"input")||T(t,"button"))&&t.type===e}}(t);// Easy API for creating new setFilters
 function es(){}function eu(e,t){var r,o,i,a,s,u,l,c=H[e+" "];if(c)return t?0:c.slice(0);for(s=e,u=[],l=n.preFilter;s;){// Filters
 for(a in(!r||(o=O.exec(s)))&&(o&&(s=s.slice(o[0].length)||s),u.push(i=[])),r=!1,(o=M.exec(s))&&(r=o.shift(),i.push({value:r,// Cast descendant combinators to space
-type:o[0].replace(L," ")}),s=s.slice(r.length)),n.filter)(o=B[a].exec(s))&&(!l[a]||(o=l[a](o)))&&(r=o.shift(),i.push({value:r,type:a,matches:o}),s=s.slice(r.length));if(!r)break}return(// Return the length of the invalid excess
+type:o[0].replace(C," ")}),s=s.slice(r.length)),n.filter)(o=B[a].exec(s))&&(!l[a]||(o=l[a](o)))&&(r=o.shift(),i.push({value:r,type:a,matches:o}),s=s.slice(r.length));if(!r)break}return(// Return the length of the invalid excess
 // if we're just parsing
 // Otherwise, throw an error or return tokens
-t?s.length:s?Z.error(e):H(e,u).slice(0))}function el(e){for(var t=0,n=e.length,r="";t<n;t++)r+=e[t].value;return r}function ec(e,t,n){var r=t.dir,o=t.next,i=o||r,a=n&&"parentNode"===i,s=S++;return t.first?function(t,n,o){for(;t=t[r];)if(1===t.nodeType||a)return e(t,n,o);return!1}:function(t,n,u){var l,c,p=[x,s];// We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
-if(u){for(;t=t[r];)if((1===t.nodeType||a)&&e(t,n,u))return!0}else for(;t=t[r];)if(1===t.nodeType||a){if(c=t[b]||(t[b]={}),o&&T(t,o))t=t[r]||t;else{if((l=c[i])&&l[0]===x&&l[1]===s)return p[2]=l[2];// A match means we're done; a fail means we have to keep checking
+t?s.length:s?Z.error(e):H(e,u).slice(0))}function el(e){for(var t=0,n=e.length,r="";t<n;t++)r+=e[t].value;return r}function ec(e,t,n){var r=t.dir,o=t.next,i=o||r,a=n&&"parentNode"===i,s=S++;return t.first?function(t,n,o){for(;t=t[r];)if(1===t.nodeType||a)return e(t,n,o);return!1}:function(t,n,u){var l,c,p=[b,s];// We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
+if(u){for(;t=t[r];)if((1===t.nodeType||a)&&e(t,n,u))return!0}else for(;t=t[r];)if(1===t.nodeType||a){if(c=t[x]||(t[x]={}),o&&T(t,o))t=t[r]||t;else{if((l=c[i])&&l[0]===b&&l[1]===s)return p[2]=l[2];// A match means we're done; a fail means we have to keep checking
 if(// Reuse newcache so results back-propagate to previous elements
-c[i]=p,p[2]=e(t,n,u))return!0}}return!1}}function ep(e){return e.length>1?function(t,n,r){for(var o=e.length;o--;)if(!e[o](t,n,r))return!1;return!0}:e[0]}function ed(e,t,n,r,o){for(var i,a=[],s=0,u=e.length,l=null!=t;s<u;s++)(i=e[s])&&(!n||n(i,r,o))&&(a.push(i),l&&t.push(s));return a}function ef(e,t/* Internal Use Only */){var r,i,a,s,l=[],p=[],d=_[e+" "];if(!d){for(t||(t=eu(e)),s=t.length;s--;)(d=function e(t){for(var r,i,a,s=t.length,l=n.relative[t[0].type],c=l||n.relative[" "],p=l?1:0,d=ec(function(e){return e===r},c,!0),f=ec(function(e){return u.call(r,e)>-1},c,!0),h=[function(e,t,n){// Support: IE 11+, Edge 17 - 18+
+c[i]=p,p[2]=e(t,n,u))return!0}}return!1}}function ep(e){return e.length>1?function(t,n,r){for(var o=e.length;o--;)if(!e[o](t,n,r))return!1;return!0}:e[0]}function ed(e,t,n,r,o){for(var i,a=[],s=0,u=e.length,l=null!=t;s<u;s++)(i=e[s])&&(!n||n(i,r,o))&&(a.push(i),l&&t.push(s));return a}function ef(e,t/* Internal Use Only */){var r,i,a,s,l=[],p=[],d=L[e+" "];if(!d){for(t||(t=eu(e)),s=t.length;s--;)(d=function e(t){for(var r,i,a,s=t.length,l=n.relative[t[0].type],c=l||n.relative[" "],p=l?1:0,d=ec(function(e){return e===r},c,!0),f=ec(function(e){return u.call(r,e)>-1},c,!0),h=[function(e,t,n){// Support: IE 11+, Edge 17 - 18+
 // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 // two documents; shallow comparisons work.
 // eslint-disable-next-line eqeqeq
 var i=!l&&(n||t!=o)||((r=t).nodeType?d(e,t,n):f(e,t,n));return(// Avoid hanging onto element
 // (see https://github.com/jquery/sizzle/issues/299)
 r=null,i)}];p<s;p++)if(i=n.relative[t[p].type])h=[ec(ep(h),i)];else{// Return special upon seeing a positional matcher
-if((i=n.filter[t[p].type].apply(null,t[p].matches))[b]){for(// Find the next relative operator (if any) for proper handling
-a=++p;a<s&&!n.relative[t[a].type];a++);return function e(t,n,r,o,i,a){return o&&!o[b]&&(o=e(o)),i&&!i[b]&&(i=e(i,a)),et(function(e,a,s,l){var c,p,d,f,h=[],m=[],g=a.length,v=e||function(e,t,n){for(var r=0,o=t.length;r<o;r++)Z(e,t[r],n);return n}(n||"*",s.nodeType?[s]:s,[]),b=t&&(e||!n)?ed(v,h,t,s,l):v;// Apply postFilter
+if((i=n.filter[t[p].type].apply(null,t[p].matches))[x]){for(// Find the next relative operator (if any) for proper handling
+a=++p;a<s&&!n.relative[t[a].type];a++);return function e(t,n,r,o,i,a){return o&&!o[x]&&(o=e(o)),i&&!i[x]&&(i=e(i,a)),et(function(e,a,s,l){var c,p,d,f,h=[],m=[],g=a.length,v=e||function(e,t,n){for(var r=0,o=t.length;r<o;r++)Z(e,t[r],n);return n}(n||"*",s.nodeType?[s]:s,[]),x=t&&(e||!n)?ed(v,h,t,s,l):v;// Apply postFilter
 if(r?// Find primary matches
-r(b,// If we have a postFinder, or filtered seed, or non-seed postFilter
+r(x,// If we have a postFinder, or filtered seed, or non-seed postFilter
 // or preexisting results,
-f=i||(e?t:g||o)?[]:a,s,l):f=b,o)for(c=ed(f,m),o(c,[],s,l),// Un-match failing elements by moving them back to matcherIn
-p=c.length;p--;)(d=c[p])&&(f[m[p]]=!(b[m[p]]=d));if(e){if(i||t){if(i){for(// Get the final matcherOut by condensing this intermediate into postFinder contexts
-c=[],p=f.length;p--;)(d=f[p])&&c.push(b[p]=d);i(null,f=[],c,l)}for(// Move matched elements from seed to results to keep them synchronized
-p=f.length;p--;)(d=f[p])&&(c=i?u.call(e,d):h[p])>-1&&(e[c]=!(a[c]=d))}}else f=ed(f===a?f.splice(g,f.length):f),i?i(null,a,f,l):y.apply(a,f)})}(p>1&&ep(h),p>1&&el(t.slice(0,p-1).concat({value:" "===t[p-2].type?"*":""})).replace(L,"$1"),i,p<a&&e(t.slice(p,a)),a<s&&e(t=t.slice(a)),a<s&&el(t))}h.push(i)}return ep(h)}(t[s]))[b]?l.push(d):p.push(d);// Save selector and tokenization
+f=i||(e?t:g||o)?[]:a,s,l):f=x,o)for(c=ed(f,m),o(c,[],s,l),// Un-match failing elements by moving them back to matcherIn
+p=c.length;p--;)(d=c[p])&&(f[m[p]]=!(x[m[p]]=d));if(e){if(i||t){if(i){for(// Get the final matcherOut by condensing this intermediate into postFinder contexts
+c=[],p=f.length;p--;)(d=f[p])&&c.push(x[p]=d);i(null,f=[],c,l)}for(// Move matched elements from seed to results to keep them synchronized
+p=f.length;p--;)(d=f[p])&&(c=i?u.call(e,d):h[p])>-1&&(e[c]=!(a[c]=d))}}else f=ed(f===a?f.splice(g,f.length):f),i?i(null,a,f,l):y.apply(a,f)})}(p>1&&ep(h),p>1&&el(t.slice(0,p-1).concat({value:" "===t[p-2].type?"*":""})).replace(C,"$1"),i,p<a&&e(t.slice(p,a)),a<s&&e(t=t.slice(a)),a<s&&el(t))}h.push(i)}return ep(h)}(t[s]))[x]?l.push(d):p.push(d);// Save selector and tokenization
 // Cache the compiled function
-(d=_(e,(r=l.length>0,i=p.length>0,a=function(e,t,a,s,u){var d,h,m,g=0,v="0",b=e&&[],S=[],w=o,H=e||i&&n.find.TAG("*",u),T=x+=null==w?1:Math.random()||.1,R=H.length;// Add elements passing elementMatchers directly to results
+(d=L(e,(r=l.length>0,i=p.length>0,a=function(e,t,a,s,u){var d,h,m,g=0,v="0",x=e&&[],S=[],w=o,H=e||i&&n.find.TAG("*",u),T=b+=null==w?1:Math.random()||.1,R=H.length;// Add elements passing elementMatchers directly to results
 // Support: iOS <=7 - 9 only
 // Tolerate NodeList properties (IE: "length"; Safari: <number>) matching
 // elements by id. (see trac-14142)
 for(u&&// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 // two documents; shallow comparisons work.
 // eslint-disable-next-line eqeqeq
-(o=t==c||t||u);v!==R&&null!=(d=H[v]);v++){if(i&&d){for(h=0,t||d.ownerDocument==c||(ea(d),a=!f);m=p[h++];)if(m(d,t||c,a)){y.call(s,d);break}u&&(x=T)}// Track unmatched elements for set filters
-r&&((d=!m&&d)&&g--,e&&b.push(d))}// Apply set filters to unmatched elements
+(o=t==c||t||u);v!==R&&null!=(d=H[v]);v++){if(i&&d){for(h=0,t||d.ownerDocument==c||(ea(d),a=!f);m=p[h++];)if(m(d,t||c,a)){y.call(s,d);break}u&&(b=T)}// Track unmatched elements for set filters
+r&&((d=!m&&d)&&g--,e&&x.push(d))}// Apply set filters to unmatched elements
 // NOTE: This can be skipped if there are no unmatched elements (i.e., `matchedCount`
 // equals `i`), unless we didn't visit _any_ elements in the above loop because we have
 // no element matchers and no seed.
@@ -338,10 +338,10 @@ r&&((d=!m&&d)&&g--,e&&b.push(d))}// Apply set filters to unmatched elements
 // numerically zero.
 if(// `i` is now the count of elements visited above, and adding it to `matchedCount`
 // makes the latter nonnegative.
-g+=v,r&&v!==g){for(h=0;m=l[h++];)m(b,S,t,a);if(e){// Reintegrate element matches to eliminate the need for sorting
-if(g>0)for(;v--;)b[v]||S[v]||(S[v]=k.call(s));// Discard index placeholder values to get only actual matches
+g+=v,r&&v!==g){for(h=0;m=l[h++];)m(x,S,t,a);if(e){// Reintegrate element matches to eliminate the need for sorting
+if(g>0)for(;v--;)x[v]||S[v]||(S[v]=k.call(s));// Discard index placeholder values to get only actual matches
 S=ed(S)}// Add matches to results
-y.apply(s,S),u&&!e&&S.length>0&&g+l.length>1&&E.uniqueSort(s)}return u&&(x=T,o=w),b},r?et(a):a))).selector=e}return d}/**
+y.apply(s,S),u&&!e&&S.length>0&&g+l.length>1&&E.uniqueSort(s)}return u&&(b=T,o=w),x},r?et(a):a))).selector=e}return d}/**
  * A low-level selection function that works with jQuery's compiled
  *  selector functions
  * @param {String|Function} selector A selector or a pre-compiled
@@ -360,15 +360,15 @@ a.splice(i,1),!(e=o.length&&el(a)))return y.apply(r,o),r;break}}return(// Compil
 (c||ef(e,p))(o,t,!f,r,!t||V.test(e)&&ei(t.parentNode)||t),r)}es.prototype=n.filters=n.pseudos,n.setFilters=new es,// One-time assignments
 // Support: Android <=4.0 - 4.1+
 // Sort stability
-h.sortStable=b.split("").sort(P).join("")===b,// Initialize against the default document
+h.sortStable=x.split("").sort(P).join("")===x,// Initialize against the default document
 ea(),// Support: Android <=4.0 - 4.1+
 // Detached nodes confoundingly follow *each other*
 h.sortDetached=en(function(e){// Should return 1, but returns 4 (following)
 return 1&e.compareDocumentPosition(c.createElement("fieldset"))}),E.find=Z,// Deprecated
 E.expr[":"]=E.expr.pseudos,E.unique=E.uniqueSort,// These have always been private, but they used to be documented as part of
 // Sizzle so let's maintain them for now for backwards compatibility purposes.
-Z.compile=ef,Z.select=eh,Z.setDocument=ea,Z.tokenize=eu,Z.escape=E.escapeSelector,Z.getText=E.text,Z.isXML=E.isXMLDoc,Z.selectors=E.expr,Z.support=E.support,Z.uniqueSort=E.uniqueSort;/* eslint-enable */}();var P=function(e,t,n){for(var r=[],o=void 0!==n;(e=e[t])&&9!==e.nodeType;)if(1===e.nodeType){if(o&&E(e).is(n))break;r.push(e)}return r},D=function(e,t){for(var n=[];e;e=e.nextSibling)1===e.nodeType&&e!==t&&n.push(e);return n},F=E.expr.match.needsContext,q=/^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i;// Implement the identical functionality for filter and not
-function N(e,t,n){return m(t)?E.grep(e,function(e,r){return!!t.call(e,r,e)!==n}):t.nodeType?E.grep(e,function(e){return e===t!==n}):"string"!=typeof t?E.grep(e,function(e){return u.call(t,e)>-1!==n}):E.filter(t,e,n)}E.filter=function(e,t,n){var r=t[0];return(n&&(e=":not("+e+")"),1===t.length&&1===r.nodeType)?E.find.matchesSelector(r,e)?[r]:[]:E.find.matches(e,E.grep(t,function(e){return 1===e.nodeType}))},E.fn.extend({find:function(e){var t,n,r=this.length,o=this;if("string"!=typeof e)return this.pushStack(E(e).filter(function(){for(t=0;t<r;t++)if(E.contains(o[t],this))return!0}));for(t=0,n=this.pushStack([]);t<r;t++)E.find(e,o[t],n);return r>1?E.uniqueSort(n):n},filter:function(e){return this.pushStack(N(this,e||[],!1))},not:function(e){return this.pushStack(N(this,e||[],!0))},is:function(e){return!!N(this,// so $("p:first").is("p:last") won't return true for a doc with two "p".
+Z.compile=ef,Z.select=eh,Z.setDocument=ea,Z.tokenize=eu,Z.escape=E.escapeSelector,Z.getText=E.text,Z.isXML=E.isXMLDoc,Z.selectors=E.expr,Z.support=E.support,Z.uniqueSort=E.uniqueSort;/* eslint-enable */}();var P=function(e,t,n){for(var r=[],o=void 0!==n;(e=e[t])&&9!==e.nodeType;)if(1===e.nodeType){if(o&&E(e).is(n))break;r.push(e)}return r},D=function(e,t){for(var n=[];e;e=e.nextSibling)1===e.nodeType&&e!==t&&n.push(e);return n},F=E.expr.match.needsContext,N=/^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i;// Implement the identical functionality for filter and not
+function q(e,t,n){return m(t)?E.grep(e,function(e,r){return!!t.call(e,r,e)!==n}):t.nodeType?E.grep(e,function(e){return e===t!==n}):"string"!=typeof t?E.grep(e,function(e){return u.call(t,e)>-1!==n}):E.filter(t,e,n)}E.filter=function(e,t,n){var r=t[0];return(n&&(e=":not("+e+")"),1===t.length&&1===r.nodeType)?E.find.matchesSelector(r,e)?[r]:[]:E.find.matches(e,E.grep(t,function(e){return 1===e.nodeType}))},E.fn.extend({find:function(e){var t,n,r=this.length,o=this;if("string"!=typeof e)return this.pushStack(E(e).filter(function(){for(t=0;t<r;t++)if(E.contains(o[t],this))return!0}));for(t=0,n=this.pushStack([]);t<r;t++)E.find(e,o[t],n);return r>1?E.uniqueSort(n):n},filter:function(e){return this.pushStack(q(this,e||[],!1))},not:function(e){return this.pushStack(q(this,e||[],!0))},is:function(e){return!!q(this,// so $("p:first").is("p:last") won't return true for a doc with two "p".
 "string"==typeof e&&F.test(e)?E(e):e||[],!1).length}});// Initialize a jQuery object
 // A central reference to the root jQuery(document)
 var U,// Prioritize #id over <tag> to avoid XSS via location.hash (trac-9521)
@@ -385,7 +385,7 @@ if(!r[1])return(o=v.getElementById(r[2]))&&(// Inject the element directly into 
 this[0]=o,this.length=1),this;// HANDLE: $(html, props)
 if(t=t instanceof E?t[0]:t,// Option to run scripts is true for back-compat
 // Intentionally let the error be thrown if parseHTML is not present
-E.merge(this,E.parseHTML(r[1],t&&t.nodeType?t.ownerDocument||t:v,!0)),q.test(r[1])&&E.isPlainObject(t))for(r in t)m(this[r])?this[r](t[r]):this.attr(r,t[r]);return this}return!t||t.jquery?(t||n).find(e):this.constructor(t).find(e);// HANDLE: $(DOMElement)
+E.merge(this,E.parseHTML(r[1],t&&t.nodeType?t.ownerDocument||t:v,!0)),N.test(r[1])&&E.isPlainObject(t))for(r in t)m(this[r])?this[r](t[r]):this.attr(r,t[r]);return this}return!t||t.jquery?(t||n).find(e):this.constructor(t).find(e);// HANDLE: $(DOMElement)
 }return e.nodeType?(this[0]=e,this.length=1,this):m(e)?void 0!==n.ready?n.ready(e):e(E):E.makeArray(e,this)}).prototype=E.fn,// Initialize central reference
 U=E(v);var M=/^(?:parents|prev(?:Until|All))/,$={children:!0,contents:!0,next:!0,prev:!0};function I(e,t){for(;(e=e[t])&&1!==e.nodeType;);return e}E.fn.extend({has:function(e){var t=E(e,this),n=t.length;return this.filter(function(){for(var e=0;e<n;e++)if(E.contains(this,t[e]))return!0})},closest:function(e,t){var n,r=0,o=this.length,i=[],a="string"!=typeof e&&E(e);// Positional selectors never match, since there's no _selection_ context
 if(!F.test(e)){for(;r<o;r++)for(n=this[r];n&&n!==t;n=n.parentNode)if(n.nodeType<11&&(a?a.index(n)>-1:1===n.nodeType&&E.find.matchesSelector(n,e))){i.push(n);break}}return this.pushStack(i.length>1?E.uniqueSort(i):i)},// Determine the position of an element within the set
@@ -429,7 +429,7 @@ a=a||e.once,// Execute callbacks for all pending executions,
 // respecting firingIndex overrides and runtime changes
 i=r=!0;u.length;l=-1)for(o=u.shift();++l<s.length;)!1===s[l].apply(o[0],o[1])&&e.stopOnFalse&&(// Jump to end and forget the data so .add doesn't re-fire
 l=s.length,o=!1);e.memory||(o=!1),r=!1,a&&(s=o?[]:"")},p={// Add a callback or a collection of callbacks to the list
-add:function(){return s&&(o&&!r&&(l=s.length-1,u.push(o)),function t(n){E.each(n,function(n,r){m(r)?e.unique&&p.has(r)||s.push(r):r&&r.length&&"string"!==x(r)&&t(r)})}(arguments),o&&!r&&c()),this},// Remove a callback from the list
+add:function(){return s&&(o&&!r&&(l=s.length-1,u.push(o)),function t(n){E.each(n,function(n,r){m(r)?e.unique&&p.has(r)||s.push(r):r&&r.length&&"string"!==b(r)&&t(r)})}(arguments),o&&!r&&c()),this},// Remove a callback from the list
 remove:function(){return E.each(arguments,function(e,t){for(var n;(n=E.inArray(t,s,n))>-1;)s.splice(n,1),n<=l&&l--}),this},// Check if a given callback is in the list.
 // If no argument is given, return whether or not list has callbacks attached.
 has:function(e){return e?E.inArray(e,s)>-1:s.length>0},// Remove all callbacks from the list
@@ -520,7 +520,7 @@ v.addEventListener("DOMContentLoaded",J),// A fallback to window.onload, that wi
 e.addEventListener("load",J)):e.setTimeout(E.ready);// Multifunctional method to get and set values of a collection
 // The value/s can optionally be executed if it's a function
 var G=function(e,t,n,r,o,i,a){var s=0,u=e.length,l=null==n;// Sets many values
-if("object"===x(n))for(s in o=!0,n)G(e,t,s,n[s],!0,i,a);else if(void 0!==r&&(o=!0,m(r)||(a=!0),l&&(a?(t.call(e,r),t=null):(l=t,t=function(e,t,n){return l.call(E(e),n)})),t))for(;s<u;s++)t(e[s],n,a?r:r.call(e[s],s,t(e[s],n)));return o?e:l?t.call(e):u?t(e[0],n):i},Y=/^-ms-/,K=/-([a-z])/g;// Used by camelCase as callback to replace()
+if("object"===b(n))for(s in o=!0,n)G(e,t,s,n[s],!0,i,a);else if(void 0!==r&&(o=!0,m(r)||(a=!0),l&&(a?(t.call(e,r),t=null):(l=t,t=function(e,t,n){return l.call(E(e),n)})),t))for(;s<u;s++)t(e[s],n,a?r:r.call(e[s],s,t(e[s],n)));return o?e:l?t.call(e):u?t(e[0],n):i},Y=/^-ms-/,K=/-([a-z])/g;// Used by camelCase as callback to replace()
 function Z(e,t){return t.toUpperCase()}// Convert dashed to camelCase; used by the css and data modules
 // Support: IE <=9 - 11, Edge 12 - 15
 // Microsoft forgot to hump their vendor prefix (trac-9572)
@@ -595,7 +595,7 @@ n=n||[]}return n&&(c=+c||+u||0,// Apply relative offset (+=/-=) if specified
 o=n[1]?c+(n[1]+1)*n[2]:+n[2],r&&(r.unit=l,r.start=c,r.end=o)),o}var eg={};function ev(e,t){// Determine new display value for elements that need to change
 for(var n,r,o=[],i=0,a=e.length;i<a;i++)(r=e[i]).style&&(n=r.style.display,t?("none"!==n||(o[i]=er.get(r,"display")||null,o[i]||(r.style.display="")),""===r.style.display&&eh(r)&&(o[i]=function(e){var t,n=e.ownerDocument,r=e.nodeName,o=eg[r];return o||(t=n.body.appendChild(n.createElement(r)),o=E.css(t,"display"),t.parentNode.removeChild(t),"none"===o&&(o="block"),eg[r]=o),o}(r))):"none"!==n&&(o[i]="none",// Remember what we're overwriting
 er.set(r,"display",n)));// Set the display of the elements in a second loop to avoid constant reflow
-for(i=0;i<a;i++)null!=o[i]&&(e[i].style.display=o[i]);return e}E.fn.extend({show:function(){return ev(this,!0)},hide:function(){return ev(this)},toggle:function(e){return"boolean"==typeof e?e?this.show():this.hide():this.each(function(){eh(this)?E(this).show():E(this).hide()})}});var ey=/^(?:checkbox|radio)$/i,eb=/<([a-z][^\/\0>\x20\t\r\n\f]*)/i,ex=/^$|^module$|\/(?:java|ecma)script/i;e8=v.createDocumentFragment().appendChild(v.createElement("div")),// Support: Android 4.0 - 4.3 only
+for(i=0;i<a;i++)null!=o[i]&&(e[i].style.display=o[i]);return e}E.fn.extend({show:function(){return ev(this,!0)},hide:function(){return ev(this)},toggle:function(e){return"boolean"==typeof e?e?this.show():this.hide():this.each(function(){eh(this)?E(this).show():E(this).hide()})}});var ey=/^(?:checkbox|radio)$/i,ex=/<([a-z][^\/\0>\x20\t\r\n\f]*)/i,eb=/^$|^module$|\/(?:java|ecma)script/i;e8=v.createDocumentFragment().appendChild(v.createElement("div")),// Support: Android 4.0 - 4.3 only
 // Check state lost if the name is set (trac-11217)
 // Support: Windows Web Apps (WWA)
 // `name` and `type` must use .setAttribute for WWA (trac-14901)
@@ -614,8 +614,8 @@ thead:[1,"<table>","</table>"],col:[2,"<table><colgroup>","</colgroup></table>"]
 // Use typeof to avoid zero-argument method invocation on host objects (trac-15151)
 var n;return(n=void 0!==e.getElementsByTagName?e.getElementsByTagName(t||"*"):void 0!==e.querySelectorAll?e.querySelectorAll(t||"*"):[],void 0===t||t&&T(e,t))?E.merge([e],n):n}// Mark scripts as having already been evaluated
 function eE(e,t){for(var n=0,r=e.length;n<r;n++)er.set(e[n],"globalEval",!t||er.get(t[n],"globalEval"))}eS.tbody=eS.tfoot=eS.colgroup=eS.caption=eS.thead,eS.th=eS.td,h.option||(eS.optgroup=eS.option=[1,"<select multiple='multiple'>","</select>"]);var eH=/<|&#?\w+;/;function eT(e,t,n,r,o){for(var i,a,s,u,l,c=t.createDocumentFragment(),p=[],d=0,f=e.length;d<f;d++)if((i=e[d])||0===i){// Add nodes directly
-if("object"===x(i))// push.apply(_, arraylike) throws on ancient WebKit
-E.merge(p,i.nodeType?[i]:i);else if(eH.test(i)){for(a=a||c.appendChild(t.createElement("div")),s=eS[(eb.exec(i)||["",""])[1].toLowerCase()]||eS._default,a.innerHTML=s[1]+E.htmlPrefilter(i)+s[2],// Descend through wrappers to the right content
+if("object"===b(i))// push.apply(_, arraylike) throws on ancient WebKit
+E.merge(p,i.nodeType?[i]:i);else if(eH.test(i)){for(a=a||c.appendChild(t.createElement("div")),s=eS[(ex.exec(i)||["",""])[1].toLowerCase()]||eS._default,a.innerHTML=s[1]+E.htmlPrefilter(i)+s[2],// Descend through wrappers to the right content
 l=s[0];l--;)a=a.lastChild;// Support: Android <=4.0 only, PhantomJS 1 only
 // push.apply(_, arraylike) throws on ancient WebKit
 E.merge(p,a.childNodes),// Ensure the created nodes are orphaned (trac-12392)
@@ -624,7 +624,7 @@ E.merge(p,a.childNodes),// Ensure the created nodes are orphaned (trac-12392)
 c.textContent="",d=0;i=p[d++];){// Skip elements already in the context collection (trac-4087)
 if(r&&E.inArray(i,r)>-1){o&&o.push(i);continue}// Capture executables
 if(u=ed(i),// Append to fragment
-a=ew(c.appendChild(i),"script"),u&&eE(a),n)for(l=0;i=a[l++];)ex.test(i.type||"")&&n.push(i)}return c}var ek=/^([^.]*)(?:\.(.+)|)/;function eR(){return!0}function ej(){return!1}function eA(e,t,n,r,o,i){var a,s;// Types can be a map of types/handlers
+a=ew(c.appendChild(i),"script"),u&&eE(a),n)for(l=0;i=a[l++];)eb.test(i.type||"")&&n.push(i)}return c}var ek=/^([^.]*)(?:\.(.+)|)/;function eR(){return!0}function ej(){return!1}function eA(e,t,n,r,o,i){var a,s;// Types can be a map of types/handlers
 if("object"==typeof t){for(s in"string"!=typeof n&&(// ( types-Object, data )
 r=r||n,n=void 0),t)eA(e,s,n,r,t[s],i);return e}if(null==r&&null==o?(// ( types, fn )
 o=n,r=n=void 0):null==o&&("string"==typeof n?(// ( types, selector, fn )
@@ -635,7 +635,7 @@ E().off(e),a.apply(this,arguments))}).guid=a.guid||(a.guid=E.guid++)),e.each(fun
 // synthetic events by interrupting progress until reinvoked in response to
 // *native* events that it fires directly, ensuring that state changes have
 // already occurred before other listeners are invoked.
-function eL(e,t,n){// Missing `isSetup` indicates a trigger call, which must force setup through jQuery.event.add
+function eC(e,t,n){// Missing `isSetup` indicates a trigger call, which must force setup through jQuery.event.add
 if(!n){void 0===er.get(e,t)&&E.event.add(e,t,eR);return}// Register the controller as a special universal handler for all event namespaces
 er.set(e,t,!1),E.event.add(e,t,{namespace:!1,handler:function(e){var n,r=er.get(this,t);if(1&e.isTrigger&&this[t]){// Interrupt processing of the outer synthetic .trigger()ed event
 if(r)(E.event.special[t]||{}).delegateType&&e.stopPropagation();else if(// Store arguments for use when handling the inner native event
@@ -690,10 +690,10 @@ noBubble:!0},click:{// Utilize native event to ensure correct state for checkabl
 setup:function(e){// For mutual compressibility with _default, replace `this` access with a local var.
 // `|| data` is dead code meant only to preserve the variable through minification.
 var t=this||e;// Return false to allow normal processing in the caller
-return ey.test(t.type)&&t.click&&T(t,"input")&&eL(t,"click",!0),!1},trigger:function(e){// For mutual compressibility with _default, replace `this` access with a local var.
+return ey.test(t.type)&&t.click&&T(t,"input")&&eC(t,"click",!0),!1},trigger:function(e){// For mutual compressibility with _default, replace `this` access with a local var.
 // `|| data` is dead code meant only to preserve the variable through minification.
 var t=this||e;// Return non-false to allow normal event-path propagation
-return ey.test(t.type)&&t.click&&T(t,"input")&&eL(t,"click"),!0},// For cross-browser consistency, suppress native .click() on links
+return ey.test(t.type)&&t.click&&T(t,"input")&&eC(t,"click"),!0},// For cross-browser consistency, suppress native .click() on links
 // Also prevent it if we're currently inside a leveraged native-event stack
 _default:function(e){var t=e.target;return ey.test(t.type)&&t.click&&T(t,"input")&&er.get(t,"click")||T(t,"a")}},beforeunload:{postDispatch:function(e){// Support: Firefox 20+
 // Firefox doesn't alert if the returnValue field is not set.
@@ -724,13 +724,13 @@ E.event.simulate(t,e.target,E.event.fix(e))}E.event.special[e]={// Utilize nativ
 setup:function(){var r;if(// Claim the first handler
 // dataPriv.set( this, "focus", ... )
 // dataPriv.set( this, "blur", ... )
-eL(this,e,!0),!v.documentMode)return!1;// Support: IE 9 - 11+
+eC(this,e,!0),!v.documentMode)return!1;// Support: IE 9 - 11+
 // We use the same native handler for focusin & focus (and focusout & blur)
 // so we need to coordinate setup & teardown parts between those events.
 // Use `delegateType` as the key as `type` is already used by `leverageNative`.
 (r=er.get(this,t))||this.addEventListener(t,n),er.set(this,t,(r||0)+1)},trigger:function(){// Return non-false to allow normal event-path propagation
 return(// Force setup before trigger
-eL(this,e),!0)},teardown:function(){var e;if(!v.documentMode)return!1;(e=er.get(this,t)-1)?er.set(this,t,e):(this.removeEventListener(t,n),er.remove(this,t))},// Suppress native focus or blur if we're currently inside
+eC(this,e),!0)},teardown:function(){var e;if(!v.documentMode)return!1;(e=er.get(this,t)-1)?er.set(this,t,e):(this.removeEventListener(t,n),er.remove(this,t))},// Suppress native focus or blur if we're currently inside
 // a leveraged native-event stack
 _default:function(t){return er.get(t.target,e)},delegateType:t},// Support: Firefox <=44
 // Firefox doesn't have focus(in | out) events
@@ -759,29 +759,29 @@ r=e.handleObj,E(e.delegateTarget).off(r.namespace?r.origType+"."+r.namespace:r.o
 for(o in e)this.off(o,t,e[o]);return this}return(!1===t||"function"==typeof t)&&(// ( types [, fn] )
 n=t,t=void 0),!1===n&&(n=ej),this.each(function(){E.event.remove(this,e,n,t)})}});var // In IE/Edge using regex groups here causes severe slowdowns.
 // See https://connect.microsoft.com/IE/feedback/details/1736512/
-e_=/<script|<style|<link/i,eC=/checked\s*(?:[^=]|=\s*.checked.)/i,eP=/^\s*<!\[CDATA\[|\]\]>\s*$/g;// Prefer a tbody over its parent table for containing new rows
+eL=/<script|<style|<link/i,e_=/checked\s*(?:[^=]|=\s*.checked.)/i,eP=/^\s*<!\[CDATA\[|\]\]>\s*$/g;// Prefer a tbody over its parent table for containing new rows
 function eD(e,t){return T(e,"table")&&T(11!==t.nodeType?t:t.firstChild,"tr")&&E(e).children("tbody")[0]||e}// Replace/restore the type attribute of script elements for safe DOM manipulation
-function eF(e){return e.type=(null!==e.getAttribute("type"))+"/"+e.type,e}function eq(e){return"true/"===(e.type||"").slice(0,5)?e.type=e.type.slice(5):e.removeAttribute("type"),e}function eN(e,t){var n,r,o,i,a,s;if(1===t.nodeType){// 1. Copy private data: events, handlers, etc.
+function eF(e){return e.type=(null!==e.getAttribute("type"))+"/"+e.type,e}function eN(e){return"true/"===(e.type||"").slice(0,5)?e.type=e.type.slice(5):e.removeAttribute("type"),e}function eq(e,t){var n,r,o,i,a,s;if(1===t.nodeType){// 1. Copy private data: events, handlers, etc.
 if(er.hasData(e)&&(s=er.get(e).events))for(o in er.remove(t,"handle events"),s)for(n=0,r=s[o].length;n<r;n++)E.event.add(t,o,s[o][n]);// 2. Copy user data
 eo.hasData(e)&&(i=eo.access(e),a=E.extend({},i),eo.set(t,a))}}function eU(e,t,n,r){// Flatten any nested arrays
 t=a(t);var o,i,s,u,l,c,p=0,d=e.length,f=d-1,g=t[0],v=m(g);// We can't cloneNode fragments that contain checked, in WebKit
-if(v||d>1&&"string"==typeof g&&!h.checkClone&&eC.test(g))return e.each(function(o){var i=e.eq(o);v&&(t[0]=g.call(this,o,i.html())),eU(i,t,n,r)});if(d&&(i=(o=eT(t,e[0].ownerDocument,!1,e,r)).firstChild,1===o.childNodes.length&&(o=i),i||r)){// Use the original fragment for the last item
+if(v||d>1&&"string"==typeof g&&!h.checkClone&&e_.test(g))return e.each(function(o){var i=e.eq(o);v&&(t[0]=g.call(this,o,i.html())),eU(i,t,n,r)});if(d&&(i=(o=eT(t,e[0].ownerDocument,!1,e,r)).firstChild,1===o.childNodes.length&&(o=i),i||r)){// Use the original fragment for the last item
 // instead of the first because it can end up
 // being emptied incorrectly in certain situations (trac-8070).
 for(u=(s=E.map(ew(o,"script"),eF)).length;p<d;p++)l=o,p!==f&&(l=E.clone(l,!0,!0),u&&// push.apply(_, arraylike) throws on ancient WebKit
 E.merge(s,ew(l,"script"))),n.call(e[p],l,p);if(u)// Evaluate executable scripts on first document insertion
 for(c=s[s.length-1].ownerDocument,// Re-enable scripts
-E.map(s,eq),p=0;p<u;p++)l=s[p],ex.test(l.type||"")&&!er.access(l,"globalEval")&&E.contains(c,l)&&(l.src&&"module"!==(l.type||"").toLowerCase()?E._evalUrl&&!l.noModule&&E._evalUrl(l.src,{nonce:l.nonce||l.getAttribute("nonce")},c):// needed as in XML documents they're already not visible when
+E.map(s,eN),p=0;p<u;p++)l=s[p],eb.test(l.type||"")&&!er.access(l,"globalEval")&&E.contains(c,l)&&(l.src&&"module"!==(l.type||"").toLowerCase()?E._evalUrl&&!l.noModule&&E._evalUrl(l.src,{nonce:l.nonce||l.getAttribute("nonce")},c):// needed as in XML documents they're already not visible when
 // inspecting element contents and in HTML documents they have no
 // meaning but we're preserving that logic for backwards compatibility.
 // This will be removed completely in 4.0. See gh-4904.
-b(l.textContent.replace(eP,""),l,c))}return e}function eO(e,t,n){for(var r,o=t?E.filter(t,e):e,i=0;null!=(r=o[i]);i++)n||1!==r.nodeType||E.cleanData(ew(r)),r.parentNode&&(n&&ed(r)&&eE(ew(r,"script")),r.parentNode.removeChild(r));return e}E.extend({htmlPrefilter:function(e){return e},clone:function(e,t,n){var r,o,i,a,s=e.cloneNode(!0),u=ed(e);// Fix IE cloning issues
+x(l.textContent.replace(eP,""),l,c))}return e}function eO(e,t,n){for(var r,o=t?E.filter(t,e):e,i=0;null!=(r=o[i]);i++)n||1!==r.nodeType||E.cleanData(ew(r)),r.parentNode&&(n&&ed(r)&&eE(ew(r,"script")),r.parentNode.removeChild(r));return e}E.extend({htmlPrefilter:function(e){return e},clone:function(e,t,n){var r,o,i,a,s=e.cloneNode(!0),u=ed(e);// Fix IE cloning issues
 if(!h.noCloneChecked&&(1===e.nodeType||11===e.nodeType)&&!E.isXMLDoc(e))for(r=0,// We eschew jQuery#find here for performance reasons:
 // https://jsperf.com/getall-vs-sizzle/2
 a=ew(s),o=(i=ew(e)).length;r<o;r++)!// Fix IE bugs, see support tests
 function(e,t){var n=t.nodeName.toLowerCase();// Fails to persist the checked state of a cloned checkbox or radio button.
 "input"===n&&ey.test(e.type)?t.checked=e.checked:("input"===n||"textarea"===n)&&(t.defaultValue=e.defaultValue)}(i[r],a[r]);// Copy the events from the original to the clone
-if(t){if(n)for(r=0,i=i||ew(e),a=a||ew(s),o=i.length;r<o;r++)eN(i[r],a[r]);else eN(e,s)}// Return the cloned set
+if(t){if(n)for(r=0,i=i||ew(e),a=a||ew(s),o=i.length;r<o;r++)eq(i[r],a[r]);else eq(e,s)}// Return the cloned set
 return(// Preserve script evaluation history
 (a=ew(s,"script")).length>0&&eE(a,!u&&ew(e,"script")),s)},cleanData:function(e){for(var t,n,r,o=E.event.special,i=0;void 0!==(n=e[i]);i++)if(et(n)){if(t=n[er.expando]){if(t.events)for(r in t.events)o[r]?E.event.remove(n,r):E.removeEvent(n,r,t.handle);// Support: Chrome <=35 - 45+
 // Assign undefined instead of using delete, see Data#remove
@@ -789,7 +789,7 @@ n[er.expando]=void 0}n[eo.expando]&&// Assign undefined instead of using delete,
 (n[eo.expando]=void 0)}}}),E.fn.extend({detach:function(e){return eO(this,e,!0)},remove:function(e){return eO(this,e)},text:function(e){return G(this,function(e){return void 0===e?E.text(this):this.empty().each(function(){(1===this.nodeType||11===this.nodeType||9===this.nodeType)&&(this.textContent=e)})},null,e,arguments.length)},append:function(){return eU(this,arguments,function(e){(1===this.nodeType||11===this.nodeType||9===this.nodeType)&&eD(this,e).appendChild(e)})},prepend:function(){return eU(this,arguments,function(e){if(1===this.nodeType||11===this.nodeType||9===this.nodeType){var t=eD(this,e);t.insertBefore(e,t.firstChild)}})},before:function(){return eU(this,arguments,function(e){this.parentNode&&this.parentNode.insertBefore(e,this)})},after:function(){return eU(this,arguments,function(e){this.parentNode&&this.parentNode.insertBefore(e,this.nextSibling)})},empty:function(){for(var e,t=0;null!=(e=this[t]);t++)1===e.nodeType&&(// Prevent memory leaks
 E.cleanData(ew(e,!1)),// Remove any remaining nodes
 e.textContent="");return this},clone:function(e,t){return e=null!=e&&e,t=null==t?e:t,this.map(function(){return E.clone(this,e,t)})},html:function(e){return G(this,function(e){var t=this[0]||{},n=0,r=this.length;if(void 0===e&&1===t.nodeType)return t.innerHTML;// See if we can take a shortcut and just use innerHTML
-if("string"==typeof e&&!e_.test(e)&&!eS[(eb.exec(e)||["",""])[1].toLowerCase()]){e=E.htmlPrefilter(e);try{for(;n<r;n++)t=this[n]||{},1===t.nodeType&&(E.cleanData(ew(t,!1)),t.innerHTML=e);t=0;// If using innerHTML throws an exception, use the fallback method
+if("string"==typeof e&&!eL.test(e)&&!eS[(ex.exec(e)||["",""])[1].toLowerCase()]){e=E.htmlPrefilter(e);try{for(;n<r;n++)t=this[n]||{},1===t.nodeType&&(E.cleanData(ew(t,!1)),t.innerHTML=e);t=0;// If using innerHTML throws an exception, use the fallback method
 }catch(e){}}t&&this.empty().append(e)},null,e,arguments.length)},replaceWith:function(){var e=[];// Make the changes, replacing each non-ignored context element with the new content
 return eU(this,arguments,function(t){var n=this.parentNode;0>E.inArray(this,e)&&(E.cleanData(ew(this)),n&&n.replaceChild(t,this));// Force callback invocation
 },e)}}),E.each({appendTo:"append",prependTo:"prepend",insertBefore:"before",insertAfter:"after",replaceAll:"replaceWith"},function(e,t){E.fn[e]=function(e){for(var n,r=[],o=E(e),i=o.length-1,a=0;a<=i;a++)n=a===i?this:this.clone(!0),E(o[a])[t](n),// Support: Android <=4.0 only, PhantomJS 1 only
@@ -826,7 +826,7 @@ a=n.getPropertyValue(t)||n[t],s&&a&&// Spec requires trimming whitespace for cus
 // because CSS preprocessing replaces them with U+000A LINE FEED
 // (which *is* CSS whitespace)
 // https://www.w3.org/TR/css-syntax-3/#input-preprocessing
-(a=a.replace(L,"$1")||void 0),""!==a||ed(e)||(a=E.style(e,t)),!h.pixelBoxStyles()&&eM.test(a)&&eB.test(t)&&(// Remember the original values
+(a=a.replace(C,"$1")||void 0),""!==a||ed(e)||(a=E.style(e,t)),!h.pixelBoxStyles()&&eM.test(a)&&eB.test(t)&&(// Remember the original values
 r=u.width,o=u.minWidth,i=u.maxWidth,// Put in the new values to get a computed value out
 u.minWidth=u.maxWidth=u.width=a,a=n.width,// Revert the changed values
 u.width=r,u.minWidth=o,u.maxWidth=i)),void 0!==a?// IE returns zIndex value as an integer.
@@ -1015,11 +1015,11 @@ E.each(["radio","checkbox"],function(){E.valHooks[this]={set:function(e,t){if(Ar
 var th=e.location,tm={guid:Date.now()},tg=/\?/;// Cross-browser xml parsing
 E.parseXML=function(t){var n,r;if(!t||"string"!=typeof t)return null;// Support: IE 9 - 11 only
 // IE throws on parseFromString with invalid input.
-try{n=new e.DOMParser().parseFromString(t,"text/xml")}catch(e){}return r=n&&n.getElementsByTagName("parsererror")[0],(!n||r)&&E.error("Invalid XML: "+(r?E.map(r.childNodes,function(e){return e.textContent}).join("\n"):t)),n};var tv=/^(?:focusinfocus|focusoutblur)$/,ty=function(e){e.stopPropagation()};E.extend(E.event,{trigger:function(t,n,r,o){var i,a,s,u,l,c,d,f,h=[r||v],y=p.call(t,"type")?t.type:t,b=p.call(t,"namespace")?t.namespace.split("."):[];// Don't do events on text and comment nodes
+try{n=new e.DOMParser().parseFromString(t,"text/xml")}catch(e){}return r=n&&n.getElementsByTagName("parsererror")[0],(!n||r)&&E.error("Invalid XML: "+(r?E.map(r.childNodes,function(e){return e.textContent}).join("\n"):t)),n};var tv=/^(?:focusinfocus|focusoutblur)$/,ty=function(e){e.stopPropagation()};E.extend(E.event,{trigger:function(t,n,r,o){var i,a,s,u,l,c,d,f,h=[r||v],y=p.call(t,"type")?t.type:t,x=p.call(t,"namespace")?t.namespace.split("."):[];// Don't do events on text and comment nodes
 if(a=f=s=r=r||v,!(3===r.nodeType||8===r.nodeType||tv.test(y+E.event.triggered))&&(y.indexOf(".")>-1&&(y=// Namespaced trigger; create a regexp to match event type in handle()
-(b=y.split(".")).shift(),b.sort()),l=0>y.indexOf(":")&&"on"+y,// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
+(x=y.split(".")).shift(),x.sort()),l=0>y.indexOf(":")&&"on"+y,// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
 // Caller can pass in a jQuery.Event object, Object, or just an event type string
-(t=t[E.expando]?t:new E.Event(y,"object"==typeof t&&t)).isTrigger=o?2:3,t.namespace=b.join("."),t.rnamespace=t.namespace?RegExp("(^|\\.)"+b.join("\\.(?:.*\\.|)")+"(\\.|$)"):null,// Clean up the event in case it is being reused
+(t=t[E.expando]?t:new E.Event(y,"object"==typeof t&&t)).isTrigger=o?2:3,t.namespace=x.join("."),t.rnamespace=t.namespace?RegExp("(^|\\.)"+x.join("\\.(?:.*\\.|)")+"(\\.|$)"):null,// Clean up the event in case it is being reused
 t.result=void 0,t.target||(t.target=r),// Clone any incoming data and prepend the event, creating the handler arg list
 n=null==n?[t]:E.makeArray(n,[t]),// Allow special events to draw outside the lines
 d=E.event.special[y]||{},o||!d.trigger||!1!==d.trigger.apply(r,n))){// Determine event propagation path in advance, per W3C events spec (trac-9951)
@@ -1031,15 +1031,15 @@ i=0;(a=h[i++])&&!t.isPropagationStopped();)f=a,t.type=i>1?u:d.bindType||y,// jQu
 (s=r[l])&&(r[l]=null),// Prevent re-triggering of the same event, since we already bubbled it above
 E.event.triggered=y,t.isPropagationStopped()&&f.addEventListener(y,ty),r[y](),t.isPropagationStopped()&&f.removeEventListener(y,ty),E.event.triggered=void 0,s&&(r[l]=s)),t.result}},// Piggyback on a donor event to simulate a different one
 // Used only for `focus(in | out)` events
-simulate:function(e,t,n){var r=E.extend(new E.Event,n,{type:e,isSimulated:!0});E.event.trigger(r,null,t)}}),E.fn.extend({trigger:function(e,t){return this.each(function(){E.event.trigger(e,t,this)})},triggerHandler:function(e,t){var n=this[0];if(n)return E.event.trigger(e,t,n,!0)}});var tb=/\[\]$/,tx=/\r?\n/g,tS=/^(?:submit|button|image|reset|file)$/i,tw=/^(?:input|select|textarea|keygen)/i;// Serialize an array of form elements or a set of
+simulate:function(e,t,n){var r=E.extend(new E.Event,n,{type:e,isSimulated:!0});E.event.trigger(r,null,t)}}),E.fn.extend({trigger:function(e,t){return this.each(function(){E.event.trigger(e,t,this)})},triggerHandler:function(e,t){var n=this[0];if(n)return E.event.trigger(e,t,n,!0)}});var tx=/\[\]$/,tb=/\r?\n/g,tS=/^(?:submit|button|image|reset|file)$/i,tw=/^(?:input|select|textarea|keygen)/i;// Serialize an array of form elements or a set of
 // key/values into a query string
 E.param=function(e,t){var n,r=[],o=function(e,t){// If value is a function, invoke it and use its return value
 var n=m(t)?t():t;r[r.length]=encodeURIComponent(e)+"="+encodeURIComponent(null==n?"":n)};if(null==e)return"";// If an array was passed in, assume that it is an array of form elements.
 if(Array.isArray(e)||e.jquery&&!E.isPlainObject(e))E.each(e,function(){o(this.name,this.value)});else // did it), otherwise encode params recursively.
-for(n in e)!function e(t,n,r,o){var i;if(Array.isArray(n))E.each(n,function(n,i){r||tb.test(t)?o(t,i):e(t+"["+("object"==typeof i&&null!=i?n:"")+"]",i,r,o)});else if(r||"object"!==x(n))o(t,n);else for(i in n)e(t+"["+i+"]",n[i],r,o)}(n,e[n],t,o);// Return the resulting serialization
+for(n in e)!function e(t,n,r,o){var i;if(Array.isArray(n))E.each(n,function(n,i){r||tx.test(t)?o(t,i):e(t+"["+("object"==typeof i&&null!=i?n:"")+"]",i,r,o)});else if(r||"object"!==b(n))o(t,n);else for(i in n)e(t+"["+i+"]",n[i],r,o)}(n,e[n],t,o);// Return the resulting serialization
 return r.join("&")},E.fn.extend({serialize:function(){return E.param(this.serializeArray())},serializeArray:function(){return this.map(function(){// Can add propHook for "elements" to filter or add form elements
 var e=E.prop(this,"elements");return e?E.makeArray(e):this}).filter(function(){var e=this.type;// Use .is( ":disabled" ) so that fieldset[disabled] works
-return this.name&&!E(this).is(":disabled")&&tw.test(this.nodeName)&&!tS.test(e)&&(this.checked||!ey.test(e))}).map(function(e,t){var n=E(this).val();return null==n?null:Array.isArray(n)?E.map(n,function(e){return{name:t.name,value:e.replace(tx,"\r\n")}}):{name:t.name,value:n.replace(tx,"\r\n")}}).get()}});var tE=/%20/g,tH=/#.*$/,tT=/([?&])_=[^&]*/,tk=/^(.*?):[ \t]*([^\r\n]*)$/mg,tR=/^(?:GET|HEAD)$/,tj=/^\/\//,/* Prefilters
+return this.name&&!E(this).is(":disabled")&&tw.test(this.nodeName)&&!tS.test(e)&&(this.checked||!ey.test(e))}).map(function(e,t){var n=E(this).val();return null==n?null:Array.isArray(n)?E.map(n,function(e){return{name:t.name,value:e.replace(tb,"\r\n")}}):{name:t.name,value:n.replace(tb,"\r\n")}}).get()}});var tE=/%20/g,tH=/#.*$/,tT=/([?&])_=[^&]*/,tk=/^(.*?):[ \t]*([^\r\n]*)$/mg,tR=/^(?:GET|HEAD)$/,tj=/^\/\//,/* Prefilters
 	 * 1) They are useful to introduce custom dataTypes (see ajax/jsonp.js for an example)
 	 * 2) These are called:
 	 *    - BEFORE asking for a transport
@@ -1051,14 +1051,14 @@ return this.name&&!E(this).is(":disabled")&&tw.test(this.nodeName)&&!tS.test(e)&
 	 * 1) key is the dataType
 	 * 2) the catchall symbol "*" can be used
 	 * 3) selection will start with transport dataType and THEN go to "*" if needed
-	 */tL={},t_="*/".concat("*"),tC=v.createElement("a");// Base "constructor" for jQuery.ajaxPrefilter and jQuery.ajaxTransport
+	 */tC={},tL="*/".concat("*"),t_=v.createElement("a");// Base "constructor" for jQuery.ajaxPrefilter and jQuery.ajaxTransport
 function tP(e){// dataTypeExpression is optional and defaults to "*"
 return function(t,n){"string"!=typeof t&&(n=t,t="*");var r,o=0,i=t.toLowerCase().match(W)||[];if(m(n))// For each dataType in the dataTypeExpression
 for(;r=i[o++];)"+"===r[0]?(e[r=r.slice(1)||"*"]=e[r]||[]).unshift(n):(e[r]=e[r]||[]).push(n)}}// Base inspection function for prefilters and transports
-function tD(e,t,n,r){var o={},i=e===tL;function a(s){var u;return o[s]=!0,E.each(e[s]||[],function(e,s){var l=s(t,n,r);return"string"!=typeof l||i||o[l]?i?!(u=l):void 0:(t.dataTypes.unshift(l),a(l),!1)}),u}return a(t.dataTypes[0])||!o["*"]&&a("*")}// A special extend for ajax options
+function tD(e,t,n,r){var o={},i=e===tC;function a(s){var u;return o[s]=!0,E.each(e[s]||[],function(e,s){var l=s(t,n,r);return"string"!=typeof l||i||o[l]?i?!(u=l):void 0:(t.dataTypes.unshift(l),a(l),!1)}),u}return a(t.dataTypes[0])||!o["*"]&&a("*")}// A special extend for ajax options
 // that takes "flat" options (not to be deep extended)
 // Fixes trac-9887
-function tF(e,t){var n,r,o=E.ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((o[n]?e:r||(r={}))[n]=t[n]);return r&&E.extend(!0,e,r),e}tC.href=th.href,E.extend({// Counter for holding the number of active queries
+function tF(e,t){var n,r,o=E.ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((o[n]?e:r||(r={}))[n]=t[n]);return r&&E.extend(!0,e,r),e}t_.href=th.href,E.extend({// Counter for holding the number of active queries
 active:0,// Last-Modified header cache for next request
 lastModified:{},etag:{},ajaxSettings:{url:th.href,type:"GET",isLocal:/^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(th.protocol),global:!0,processData:!0,async:!0,contentType:"application/x-www-form-urlencoded; charset=UTF-8",/*
 		timeout: 0,
@@ -1070,7 +1070,7 @@ lastModified:{},etag:{},ajaxSettings:{url:th.href,type:"GET",isLocal:/^(?:about|
 		throws: false,
 		traditional: false,
 		headers: {},
-		*/accepts:{"*":t_,text:"text/plain",html:"text/html",xml:"application/xml, text/xml",json:"application/json, text/javascript"},contents:{xml:/\bxml\b/,html:/\bhtml/,json:/\bjson\b/},responseFields:{xml:"responseXML",text:"responseText",json:"responseJSON"},// Data converters
+		*/accepts:{"*":tL,text:"text/plain",html:"text/html",xml:"application/xml, text/xml",json:"application/json, text/javascript"},contents:{xml:/\bxml\b/,html:/\bhtml/,json:/\bjson\b/},responseFields:{xml:"responseXML",text:"responseText",json:"responseJSON"},// Data converters
 // Keys separate source (or catchall "*") and destination types with a single space
 converters:{// Convert anything to text
 "* text":String,// Text to html (true = no transformation)
@@ -1083,14 +1083,14 @@ converters:{// Convert anything to text
 flatOptions:{url:!0,context:!0}},// Creates a full fledged settings object into target
 // with both ajaxSettings and settings fields.
 // If target is omitted, writes into ajaxSettings.
-ajaxSetup:function(e,t){return t?tF(tF(e,E.ajaxSettings),t):tF(E.ajaxSettings,e)},ajaxPrefilter:tP(tA),ajaxTransport:tP(tL),// Main method
+ajaxSetup:function(e,t){return t?tF(tF(e,E.ajaxSettings),t):tF(E.ajaxSettings,e)},ajaxPrefilter:tP(tA),ajaxTransport:tP(tC),// Main method
 ajax:function(t,n){"object"==typeof t&&(n=t,t=void 0),// Force options to be an object
-n=n||{};var r,o,i,a,s,u,l,c,p,d,f=E.ajaxSetup({},n),h=f.context||f,m=f.context&&(h.nodeType||h.jquery)?E(h):E.event,g=E.Deferred(),y=E.Callbacks("once memory"),b=f.statusCode||{},x={},S={},w="canceled",H={readyState:0,// Builds headers hashtable if needed
+n=n||{};var r,o,i,a,s,u,l,c,p,d,f=E.ajaxSetup({},n),h=f.context||f,m=f.context&&(h.nodeType||h.jquery)?E(h):E.event,g=E.Deferred(),y=E.Callbacks("once memory"),x=f.statusCode||{},b={},S={},w="canceled",H={readyState:0,// Builds headers hashtable if needed
 getResponseHeader:function(e){var t;if(l){if(!a)for(a={};t=tk.exec(i);)a[t[1].toLowerCase()+" "]=(a[t[1].toLowerCase()+" "]||[]).concat(t[2]);t=a[e.toLowerCase()+" "]}return null==t?null:t.join(", ")},// Raw string
 getAllResponseHeaders:function(){return l?i:null},// Caches the header
-setRequestHeader:function(e,t){return null==l&&(x[e=S[e.toLowerCase()]=S[e.toLowerCase()]||e]=t),this},// Overrides response content-type header
+setRequestHeader:function(e,t){return null==l&&(b[e=S[e.toLowerCase()]=S[e.toLowerCase()]||e]=t),this},// Overrides response content-type header
 overrideMimeType:function(e){return null==l&&(f.mimeType=e),this},// Status-dependent callbacks
-statusCode:function(e){var t;if(e){if(l)H.always(e[H.status]);else for(t in e)b[t]=[b[t],e[t]]}return this},// Cancel the request
+statusCode:function(e){var t;if(e){if(l)H.always(e[H.status]);else for(t in e)x[t]=[x[t],e[t]]}return this},// Cancel the request
 abort:function(e){var t=e||w;return r&&r.abort(t),T(0,t),this}};// A cross-domain request is in order when the origin doesn't match the current origin.
 if(// Attach deferreds
 g.promise(H),// Add protocol if not provided (prefilters might expect it)
@@ -1103,7 +1103,7 @@ f.dataTypes=(f.dataType||"*").toLowerCase().match(W)||[""],null==f.crossDomain){
 // e.g. http://example.com:80x/
 try{u.href=f.url,// Support: IE <=8 - 11 only
 // Anchor's host property isn't correctly set when s.url is relative
-u.href=u.href,f.crossDomain=tC.protocol+"//"+tC.host!=u.protocol+"//"+u.host}catch(e){// If there is an error parsing the URL, assume it is crossDomain,
+u.href=u.href,f.crossDomain=t_.protocol+"//"+t_.host!=u.protocol+"//"+u.host}catch(e){// If there is an error parsing the URL, assume it is crossDomain,
 // it can be rejected by the transport if it is invalid
 f.crossDomain=!0}}// If request was aborted inside a prefilter, stop there
 if(f.data&&f.processData&&"string"!=typeof f.data&&(f.data=E.param(f.data,f.traditional)),// Apply prefilters
@@ -1119,22 +1119,22 @@ o=f.url.replace(tH,""),f.hasContent?f.data&&f.processData&&0===(f.contentType||"
 d=f.url.slice(o.length),f.data&&(f.processData||"string"==typeof f.data)&&(o+=(tg.test(o)?"&":"?")+f.data,// trac-9682: remove data so that it's not used in an eventual retry
 delete f.data),!1===f.cache&&(o=o.replace(tT,"$1"),d=(tg.test(o)?"&":"?")+"_="+tm.guid+++d),// Put hash and anti-cache on the URL that will be requested (gh-1732)
 f.url=o+d),f.ifModified&&(E.lastModified[o]&&H.setRequestHeader("If-Modified-Since",E.lastModified[o]),E.etag[o]&&H.setRequestHeader("If-None-Match",E.etag[o])),(f.data&&f.hasContent&&!1!==f.contentType||n.contentType)&&H.setRequestHeader("Content-Type",f.contentType),// Set the Accepts header for the server, depending on the dataType
-H.setRequestHeader("Accept",f.dataTypes[0]&&f.accepts[f.dataTypes[0]]?f.accepts[f.dataTypes[0]]+("*"!==f.dataTypes[0]?", "+t_+"; q=0.01":""):f.accepts["*"]),f.headers)H.setRequestHeader(p,f.headers[p]);// Allow custom headers/mimetypes and early abort
+H.setRequestHeader("Accept",f.dataTypes[0]&&f.accepts[f.dataTypes[0]]?f.accepts[f.dataTypes[0]]+("*"!==f.dataTypes[0]?", "+tL+"; q=0.01":""):f.accepts["*"]),f.headers)H.setRequestHeader(p,f.headers[p]);// Allow custom headers/mimetypes and early abort
 if(f.beforeSend&&(!1===f.beforeSend.call(h,H,f)||l))return H.abort();// If no transport, we auto-abort
 if(// Aborting is no longer a cancellation
 w="abort",// Install callbacks on deferreds
 y.add(f.complete),H.done(f.success),H.fail(f.error),// Get transport
-r=tD(tL,f,n,H)){// If request was aborted inside ajaxSend, stop there
-if(H.readyState=1,c&&m.trigger("ajaxSend",[H,f]),l)return H;f.async&&f.timeout>0&&(s=e.setTimeout(function(){H.abort("timeout")},f.timeout));try{l=!1,r.send(x,T)}catch(e){// Rethrow post-completion exceptions
+r=tD(tC,f,n,H)){// If request was aborted inside ajaxSend, stop there
+if(H.readyState=1,c&&m.trigger("ajaxSend",[H,f]),l)return H;f.async&&f.timeout>0&&(s=e.setTimeout(function(){H.abort("timeout")},f.timeout));try{l=!1,r.send(b,T)}catch(e){// Rethrow post-completion exceptions
 if(l)throw e;// Propagate others as results
 T(-1,e)}}else T(-1,"No Transport");// Callback for when everything is done
-function T(t,n,a,u){var p,d,v,x,S,w=n;// Ignore repeat invocations
+function T(t,n,a,u){var p,d,v,b,S,w=n;// Ignore repeat invocations
 l||(l=!0,s&&e.clearTimeout(s),// Dereference transport for early garbage collection
 // (no matter how long the jqXHR object will be used)
 r=void 0,// Cache response headers
 i=u||"",// Set readyState
 H.readyState=t>0?4:0,// Determine if successful
-p=t>=200&&t<300||304===t,a&&(x=/* Handles responses to an ajax request:
+p=t>=200&&t<300||304===t,a&&(b=/* Handles responses to an ajax request:
  * - finds the right dataType (mediates between content-type and expected dataType)
  * - returns the corresponding response
  */function(e,t,n){// Remove auto dataType and get content-type in the process
@@ -1146,7 +1146,7 @@ i=i||a}// If we found a dataType
 // We add the dataType to the list if needed
 // and return the corresponding response
 if(i)return i!==u[0]&&u.unshift(i),n[i]}(f,H,a)),!p&&E.inArray("script",f.dataTypes)>-1&&0>E.inArray("json",f.dataTypes)&&(f.converters["text script"]=function(){}),// Convert no matter what (that way responseXXX fields are always set)
-x=/* Chain conversions given the request and the original response
+b=/* Chain conversions given the request and the original response
  * Also sets the responseXXX fields on the jqXHR instance
  */function(e,t,n,r){var o,i,a,s,u,l={},c=e.dataTypes.slice();// Create converters map with lowercased keys
 if(c[1])for(a in e.converters)l[a.toLowerCase()]=e.converters[a];// Convert to each sequential dataType
@@ -1158,24 +1158,24 @@ if(!// Seek a direct converter
 (a=l[u+" "+s[0]]||l["* "+s[0]])){// Condense equivalence converters
 !0===a?a=l[o]:!0!==l[o]&&(i=s[0],c.unshift(s[1]));break}}// Apply converter (if not an equivalence)
 if(!0!==a){// Unless errors are allowed to bubble, catch and return them
-if(a&&e.throws)t=a(t);else try{t=a(t)}catch(e){return{state:"parsererror",error:a?e:"No conversion from "+u+" to "+i}}}}}return{state:"success",data:t}}(f,x,H,p),p?(f.ifModified&&((S=H.getResponseHeader("Last-Modified"))&&(E.lastModified[o]=S),(S=H.getResponseHeader("etag"))&&(E.etag[o]=S)),204===t||"HEAD"===f.type?w="nocontent":304===t?w="notmodified":(w=x.state,d=x.data,p=!(v=x.error))):(// Extract error from statusText and normalize for non-aborts
+if(a&&e.throws)t=a(t);else try{t=a(t)}catch(e){return{state:"parsererror",error:a?e:"No conversion from "+u+" to "+i}}}}}return{state:"success",data:t}}(f,b,H,p),p?(f.ifModified&&((S=H.getResponseHeader("Last-Modified"))&&(E.lastModified[o]=S),(S=H.getResponseHeader("etag"))&&(E.etag[o]=S)),204===t||"HEAD"===f.type?w="nocontent":304===t?w="notmodified":(w=b.state,d=b.data,p=!(v=b.error))):(// Extract error from statusText and normalize for non-aborts
 v=w,(t||!w)&&(w="error",t<0&&(t=0))),// Set data for the fake xhr object
 H.status=t,H.statusText=(n||w)+"",p?g.resolveWith(h,[d,w,H]):g.rejectWith(h,[H,w,v]),// Status-dependent callbacks
-H.statusCode(b),b=void 0,c&&m.trigger(p?"ajaxSuccess":"ajaxError",[H,f,p?d:v]),// Complete
+H.statusCode(x),x=void 0,c&&m.trigger(p?"ajaxSuccess":"ajaxError",[H,f,p?d:v]),// Complete
 y.fireWith(h,[H,w]),!c||(m.trigger("ajaxComplete",[H,f]),--E.active||E.event.trigger("ajaxStop")))}return H},getJSON:function(e,t,n){return E.get(e,t,n,"json")},getScript:function(e,t){return E.get(e,void 0,t,"script")}}),E.each(["get","post"],function(e,t){E[t]=function(e,n,r,o){// The url can be an options object (which then must have .url)
 return m(n)&&(o=o||r,r=n,n=void 0),E.ajax(E.extend({url:e,type:t,dataType:o,data:n,success:r},E.isPlainObject(e)&&e))}}),E.ajaxPrefilter(function(e){var t;for(t in e.headers)"content-type"===t.toLowerCase()&&(e.contentType=e.headers[t]||"")}),E._evalUrl=function(e,t,n){return E.ajax({url:e,// Make this explicit, since user can override this through ajaxSetup (trac-11264)
 type:"GET",dataType:"script",cache:!0,async:!1,global:!1,// Only evaluate the response if it is successful (gh-4126)
 // dataFilter is not invoked for failure responses, so using it instead
 // of the default converter is kludgy but it works.
 converters:{"text script":function(){}},dataFilter:function(e){E.globalEval(e,t,n)}})},E.fn.extend({wrapAll:function(e){var t;return this[0]&&(m(e)&&(e=e.call(this[0])),// The elements to wrap the target around
-t=E(e,this[0].ownerDocument).eq(0).clone(!0),this[0].parentNode&&t.insertBefore(this[0]),t.map(function(){for(var e=this;e.firstElementChild;)e=e.firstElementChild;return e}).append(this)),this},wrapInner:function(e){return m(e)?this.each(function(t){E(this).wrapInner(e.call(this,t))}):this.each(function(){var t=E(this),n=t.contents();n.length?n.wrapAll(e):t.append(e)})},wrap:function(e){var t=m(e);return this.each(function(n){E(this).wrapAll(t?e.call(this,n):e)})},unwrap:function(e){return this.parent(e).not("body").each(function(){E(this).replaceWith(this.childNodes)}),this}}),E.expr.pseudos.hidden=function(e){return!E.expr.pseudos.visible(e)},E.expr.pseudos.visible=function(e){return!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)},E.ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var tq={// File protocol always yields status code 0, assume 200
+t=E(e,this[0].ownerDocument).eq(0).clone(!0),this[0].parentNode&&t.insertBefore(this[0]),t.map(function(){for(var e=this;e.firstElementChild;)e=e.firstElementChild;return e}).append(this)),this},wrapInner:function(e){return m(e)?this.each(function(t){E(this).wrapInner(e.call(this,t))}):this.each(function(){var t=E(this),n=t.contents();n.length?n.wrapAll(e):t.append(e)})},wrap:function(e){var t=m(e);return this.each(function(n){E(this).wrapAll(t?e.call(this,n):e)})},unwrap:function(e){return this.parent(e).not("body").each(function(){E(this).replaceWith(this.childNodes)}),this}}),E.expr.pseudos.hidden=function(e){return!E.expr.pseudos.visible(e)},E.expr.pseudos.visible=function(e){return!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)},E.ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var tN={// File protocol always yields status code 0, assume 200
 0:200,// Support: IE <=9 only
 // trac-1450: sometimes IE returns 1223 when it should be 204
-1223:204},tN=E.ajaxSettings.xhr();h.cors=!!tN&&"withCredentials"in tN,h.ajax=tN=!!tN,E.ajaxTransport(function(t){var n,r;// Cross domain only allowed if supported through XMLHttpRequest
-if(h.cors||tN&&!t.crossDomain)return{send:function(o,i){var a,s=t.xhr();// Apply custom fields if provided
+1223:204},tq=E.ajaxSettings.xhr();h.cors=!!tq&&"withCredentials"in tq,h.ajax=tq=!!tq,E.ajaxTransport(function(t){var n,r;// Cross domain only allowed if supported through XMLHttpRequest
+if(h.cors||tq&&!t.crossDomain)return{send:function(o,i){var a,s=t.xhr();// Apply custom fields if provided
 if(s.open(t.type,t.url,t.async,t.username,t.password),t.xhrFields)for(a in t.xhrFields)s[a]=t.xhrFields[a];// Set headers
 for(a in t.mimeType&&s.overrideMimeType&&s.overrideMimeType(t.mimeType),t.crossDomain||o["X-Requested-With"]||(o["X-Requested-With"]="XMLHttpRequest"),o)s.setRequestHeader(a,o[a]);// Callback
-n=function(e){return function(){n&&(n=r=s.onload=s.onerror=s.onabort=s.ontimeout=s.onreadystatechange=null,"abort"===e?s.abort():"error"===e?"number"!=typeof s.status?i(0,"error"):i(s.status,s.statusText):i(tq[s.status]||s.status,s.statusText,"text"!==// IE9 has no XHR2 but throws on binary (trac-11426)
+n=function(e){return function(){n&&(n=r=s.onload=s.onerror=s.onabort=s.ontimeout=s.onreadystatechange=null,"abort"===e?s.abort():"error"===e?"number"!=typeof s.status?i(0,"error"):i(s.status,s.statusText):i(tN[s.status]||s.status,s.statusText,"text"!==// IE9 has no XHR2 but throws on binary (trac-11426)
 // For XHR2 non-text, let the caller handle it (gh-2498)
 (s.responseType||"text")||"string"!=typeof s.responseText?{binary:s.response}:{text:s.responseText},s.getAllResponseHeaders()))}},// Listen to events
 s.onload=n(),r=s.onerror=s.ontimeout=n("error"),void 0!==s.onabort?s.onabort=r:s.onreadystatechange=function(){// Check readyState before timeout as it changes
@@ -1214,7 +1214,7 @@ h.createHTMLDocument=((n=v.implementation.createHTMLDocument("").body).innerHTML
 E.parseHTML=function(e,t,n){var r,o,i;return"string"!=typeof e?[]:("boolean"==typeof t&&(n=t,t=!1),t||(h.createHTMLDocument?(// Set the base href for the created document
 // so any parsed elements with URLs
 // are based on the document's URL (gh-2965)
-(r=(t=v.implementation.createHTMLDocument("")).createElement("base")).href=v.location.href,t.head.appendChild(r)):t=v),o=q.exec(e),i=!n&&[],o)?[t.createElement(o[1])]:(o=eT([e],t,i),i&&i.length&&E(i).remove(),E.merge([],o.childNodes))},/**
+(r=(t=v.implementation.createHTMLDocument("")).createElement("base")).href=v.location.href,t.head.appendChild(r)):t=v),o=N.exec(e),i=!n&&[],o)?[t.createElement(o[1])]:(o=eT([e],t,i),i&&i.length&&E(i).remove(),E.merge([],o.childNodes))},/**
  * Load a url into a page
  */E.fn.load=function(e,t,n){var r,o,i,a=this,s=e.indexOf(" ");return s>-1&&(r=tc(e.slice(s)),e=e.slice(0,s)),m(t)?(// We assume that it's the callback
 n=t,t=void 0):t&&"object"==typeof t&&(o="POST"),a.length>0&&E.ajax({url:e,// If "type" variable is undefined, then "GET" method will be used.
@@ -1274,7 +1274,7 @@ E.proxy=function(e,t){var n,r,o;// Quick check to determine if target is callabl
 // this throws a TypeError, but we will just return undefined.
 if("string"==typeof t&&(n=e[t],t=e,e=n),m(e))return(// Simulated bind
 r=i.call(arguments,2),// Set the guid of unique handler to the same of original handler, so it can be removed
-(o=function(){return e.apply(t||this,r.concat(i.call(arguments)))}).guid=e.guid=e.guid||E.guid++,o)},E.holdReady=function(e){e?E.readyWait++:E.ready(!0)},E.isArray=Array.isArray,E.parseJSON=JSON.parse,E.nodeName=T,E.isFunction=m,E.isWindow=g,E.camelCase=ee,E.type=x,E.now=Date.now,E.isNumeric=function(e){// As of jQuery 3.0, isNumeric is limited to
+(o=function(){return e.apply(t||this,r.concat(i.call(arguments)))}).guid=e.guid=e.guid||E.guid++,o)},E.holdReady=function(e){e?E.readyWait++:E.ready(!0)},E.isArray=Array.isArray,E.parseJSON=JSON.parse,E.nodeName=T,E.isFunction=m,E.isWindow=g,E.camelCase=ee,E.type=b,E.now=Date.now,E.isNumeric=function(e){// As of jQuery 3.0, isNumeric is limited to
 // strings and numbers (primitives or objects)
 // that can be coerced to finite numbers (gh-2662)
 var t=E.type(e);return("number"===t||"string"===t)&&// parseFloat NaNs numeric-cast false positives ("")
@@ -1288,27 +1288,40 @@ var t=E.type(e);return("number"===t||"string"===t)&&// parseFloat NaNs numeric-c
 // See ticket trac-14549 for more info.
 o=n.document?r(n,!0):function(e){if(!e.document)throw Error("jQuery requires a window with a document");return r(e)}:r(n),/*@__PURE__*/t(o)(document).ready(function(){function e(e,t){var n=e.find(".top").clone(),r=e.find(".bottom").clone();n.addClass("new"),r.addClass("new"),r.find(".text").text(t),e.find(".top").after(n),e.find(".top.new").append(r),e.addClass("flipping"),e.find(".top:not(.new)").find(".text").text(t),setTimeout(function(){e.find(".bottom:not(.new)").find(".text").text(t)},500)}let n=/*@__PURE__*/t(o)(".clock .flipper:nth-child(1) div:not(.new) .text"),r=/*@__PURE__*/t(o)(".clock .flipper:nth-child(2) div:not(.new) .text"),i=/*@__PURE__*/t(o)(".clock .flipper:nth-child(3) div:not(.new) .text"),a=/*@__PURE__*/t(o)(".clock .flipper:nth-child(4) div:not(.new) .text");// Додай це для днів
 !function s(){/*@__PURE__*/t(o)(".flipper").removeClass("flipping"),/*@__PURE__*/t(o)(".flipper .new").remove();var u=new Date,l=u.getSeconds().toString().padStart(2,"0"),c=u.getMinutes().toString().padStart(2,"0"),p=u.getHours();p>12&&(p-=12),0==p&&(p=12),p=p.toString().padStart(2,"0");var d=u.getDate().toString().padStart(2,"0");/*@__PURE__*/t(o)(r[0]).text()!==p&&e(/*@__PURE__*/t(o)(r[0]).closest(".flipper"),p),/*@__PURE__*/t(o)(i[0]).text()!==c&&e(/*@__PURE__*/t(o)(i[0]).closest(".flipper"),c),/*@__PURE__*/t(o)(a[0]).text()!==l&&e(/*@__PURE__*/t(o)(a[0]).closest(".flipper"),l),/*@__PURE__*/t(o)(n[0]).text()!==d&&e(/*@__PURE__*/t(o)(n[0]).closest(".flipper"),d),setTimeout(function(){s()},500)}()});const i=document.querySelectorAll(".slider-box .slider-line img"),a=document.querySelector(".slider-line");let s=0;function u(){console.log("resize"),e=document.querySelector(".slider-box").offsetWidth,a.style.width=e*i.length+"px",i.forEach(t=>{t.style.width=e+"px";// item.style.height = 'auto';
-}),l()}function l(){a.style.transform="translate(-"+s*e+"px)"}window.addEventListener("resize",u),u(),document.querySelector(".slider-next").addEventListener("click",function(){++s>=i.length&&(s=0),l()}),document.querySelector(".slider-prev").addEventListener("click",function(){--s<0&&(s=i.length-1),l()});const c=document.querySelector(".submit"),p=document.querySelector(".form"),d=document.querySelector(".ok_message"),f=document.querySelector(".btn-close"),h=document.querySelector(".order-btn");h.addEventListener("click",function(){p.classList.add("active")}),c.addEventListener("click",function(){c.parent().parent().hide(300),d.classList.add("active")}),f.addEventListener("click",function(){console.log("poc"),p.classList.remove("active")}),d.addEventListener("click",function(){d.classList.remove("active");//   form.classList.remove("active").show();
-});var m={};m=new URL("1desk@1x.5703d9b4.jpg",import.meta.url).toString();var g={};g=new URL("1tab@1x.673653b2.jpg",import.meta.url).toString();var v={};v=new URL("1mob@1x.69785b6f.jpg",import.meta.url).toString();var y={};y=new URL("2desk@1x.96833ea4.jpg",import.meta.url).toString();var b={};b=new URL("2tab@1x.fe3ecb27.jpg",import.meta.url).toString();var x={};x=new URL("2mob@1x.ede91e6f.jpg",import.meta.url).toString();var S={};S=new URL("3desk@1x.6d1f071d.jpg",import.meta.url).toString();var w={};w=new URL("3tab@1x.9ee26a87.jpg",import.meta.url).toString();var E={};E=new URL("3mob@1x.6bd378f8.jpg",import.meta.url).toString();var H={};H=new URL("4desk@1x.345a1318.jpg",import.meta.url).toString();var T={};T=new URL("4tab@1x.cf493627.jpg",import.meta.url).toString();var k={};k=new URL("4mob@1x.2afe27c2.jpg",import.meta.url).toString();var R={};R=new URL("5desk@1x.6181253e.jpg",import.meta.url).toString();var j={};j=new URL("5tab@1x.d3bf8586.jpg",import.meta.url).toString();var A={};A=new URL("5mob@1x.33de1c8f.jpg",import.meta.url).toString();var L={};L=new URL("6desk@1x.22c4d2ad.jpg",import.meta.url).toString();var _={};_=new URL("6tab@1x.b1cfdde8.jpg",import.meta.url).toString();var C={};C=new URL("6mob@1x.4ca7edf6.jpg",import.meta.url).toString();var P={};P=new URL("7desk@1x.bd263f1b.jpg",import.meta.url).toString();var D={};D=new URL("7tab@1x.3cc9ea70.jpg",import.meta.url).toString();var F={};F=new URL("7mob@1x.f672273d.jpg",import.meta.url).toString();var q={};q=new URL("8desk@1x.0fe487a9.jpg",import.meta.url).toString();var N={};N=new URL("8tab@1x.fa92e96a.jpg",import.meta.url).toString();var U={};U=new URL("8mob@1x.ada5ba30.jpg",import.meta.url).toString();var O={};O=new URL("9desk@1x.3627d42f.jpg",import.meta.url).toString();var M={};M=new URL("9tab@1x.78c3aa74.jpg",import.meta.url).toString();var $={};$=new URL("9mob@1x.9c41dce6.jpg",import.meta.url).toString();var I={};I=new URL("10desk@1x.bf93d187.jpg",import.meta.url).toString();var W={};W=new URL("10tab@1x.bc96d452.jpg",import.meta.url).toString();var B={};B=new URL("10mob@1x.5c2e3975.jpg",import.meta.url).toString();var z={};z=new URL("11desk@1x.016fce68.jpg",import.meta.url).toString();var X={};X=new URL("11tab@1x.cedb6327.jpg",import.meta.url).toString();var Q={};Q=new URL("11mob@1x.72753896.jpg",import.meta.url).toString();var V={};V=new URL("12desk@1x.ab64a7f3.jpg",import.meta.url).toString();var J={};J=new URL("12tab@1x.a6cc30bb.jpg",import.meta.url).toString(),new URL("12mob@1x.d8f79aaf.jpg",import.meta.url).toString();var G={};G=new URL("13desk@1x.dbe006b3.jpg",import.meta.url).toString();var Y={};Y=new URL("13tab@1x.409b8dde.jpg",import.meta.url).toString();var K={};K=new URL("13mob@1x.d7b3fe15.jpg",import.meta.url).toString();var Z={};Z=new URL("1desk@2x.5703d9b4.jpg",import.meta.url).toString();var ee={};ee=new URL("1tab@2x.673653b2.jpg",import.meta.url).toString();var et={};et=new URL("1mob@2x.69785b6f.jpg",import.meta.url).toString();var en={};en=new URL("2desk@2x.8c19d163.jpg",import.meta.url).toString();var er={};er=new URL("2tab@2x.18bde6d7.jpg",import.meta.url).toString();var eo={};eo=new URL("2mob@2x.6f894f8f.jpg",import.meta.url).toString();var ei={};ei=new URL("3desk@2x.c58e2d86.jpg",import.meta.url).toString();var ea={};ea=new URL("3tab@2x.5b680e31.jpg",import.meta.url).toString();var es={};es=new URL("3mob@2x.f34a86fa.jpg",import.meta.url).toString();var eu={};eu=new URL("4desk@2x.967ef7e1.jpg",import.meta.url).toString();var el={};el=new URL("4tab@2x.a2fd7cc6.jpg",import.meta.url).toString();var ec={};ec=new URL("4mob@2x.eaaaa84d.jpg",import.meta.url).toString();var ep={};ep=new URL("5desk@2x.d42ed89e.jpg",import.meta.url).toString();var ed={};ed=new URL("5tab@2x.efacb099.jpg",import.meta.url).toString();var ef={};ef=new URL("5mob@2x.e176f762.jpg",import.meta.url).toString();var eh={};eh=new URL("6desk@2x.fefc695a.jpg",import.meta.url).toString();var em={};em=new URL("6tab@2x.51635a43.jpg",import.meta.url).toString();var eg={};eg=new URL("6mob@2x.5df99d17.jpg",import.meta.url).toString();var ev={};ev=new URL("7desk@2x.e64cb8f6.jpg",import.meta.url).toString();var ey={};ey=new URL("7tab@2x.84e640e3.jpg",import.meta.url).toString();var eb={};eb=new URL("7mob@2x.90eaadbf.jpg",import.meta.url).toString();var ex={};ex=new URL("8desk@2x.af305e8d.jpg",import.meta.url).toString();var eS={};eS=new URL("8tab@2x.7a0607cf.jpg",import.meta.url).toString();var ew={};ew=new URL("8mob@2x.ac4ff740.jpg",import.meta.url).toString();var eE={};eE=new URL("9desk@2x.600598e0.jpg",import.meta.url).toString();var eH={};eH=new URL("9tab@2x.d69c0800.jpg",import.meta.url).toString();var eT={};eT=new URL("9mob@2x.5198122d.jpg",import.meta.url).toString();var ek={};ek=new URL("10desk@2x.6e9ab827.jpg",import.meta.url).toString();var eR={};eR=new URL("10tab@2x.00d99014.jpg",import.meta.url).toString();var ej={};ej=new URL("10mob@2x.e4aef60c.jpg",import.meta.url).toString();var eA={};eA=new URL("11desk@2x.be416a78.jpg",import.meta.url).toString();var eL={};eL=new URL("11tab@2x.ac7bf444.jpg",import.meta.url).toString();var e_={};e_=new URL("11mob@2x.89239162.jpg",import.meta.url).toString(),new URL("12desk@2x.c75ee5fa.jpg",import.meta.url).toString(),new URL("12tab@2x.b1dde642.jpg",import.meta.url).toString();var eC={};eC=new URL("12mob@2x.c4f0f812.jpg",import.meta.url).toString(),new URL("13desk@2x.60df23ce.jpg",import.meta.url).toString(),new URL("13tab@2x.fe1c9190.jpg",import.meta.url).toString(),new URL("13mob@2x.e9966fb3.jpg",import.meta.url).toString();const eP=[{id:1,deskPhoto:/*@__PURE__*/t(m),tabPhoto:/*@__PURE__*/t(g),mobPhoto:/*@__PURE__*/t(v),deskPhoto2x:/*@__PURE__*/t(Z),tabPhoto2x:/*@__PURE__*/t(ee),mobPhoto2x:/*@__PURE__*/t(et),// photo: desk1x1,
+}),l()}function l(){a.style.transform="translate(-"+s*e+"px)"}window.addEventListener("resize",u),u(),document.querySelector(".slider-next").addEventListener("click",function(){++s>=i.length&&(s=0),l()}),document.querySelector(".slider-prev").addEventListener("click",function(){--s<0&&(s=i.length-1),l()});// const submit = document.querySelector('.submit');
+// const form = document.querySelector('.form');
+// const okMessage = document.querySelector('.ok_message');
+// const close = document.querySelector('.btn-close')
+// const order = document.querySelector('.order-btn');
+// order.addEventListener('click', function () {
+//   form.classList.add('active');
+// });
+// submit.addEventListener('click', function() {
+//   submit.parent().parent().hide(300);
+//   okMessage.classList.add("active");
+// });
+// close.addEventListener('click', function() {
+//   console.log('poc')
+//   form.classList.remove('active');
+// });
+// okMessage.addEventListener('click', function() {
+//   okMessage.classList.remove("active");
+// //   form.classList.remove("active").show();
+// });
+var c={};c=new URL("1desk@1x.5703d9b4.jpg",import.meta.url).toString();var p={};p=new URL("1tab@1x.673653b2.jpg",import.meta.url).toString();var d={};d=new URL("1mob@1x.69785b6f.jpg",import.meta.url).toString();var f={};f=new URL("2desk@1x.96833ea4.jpg",import.meta.url).toString();var h={};h=new URL("2tab@1x.fe3ecb27.jpg",import.meta.url).toString();var m={};m=new URL("2mob@1x.ede91e6f.jpg",import.meta.url).toString();var g={};g=new URL("3desk@1x.6d1f071d.jpg",import.meta.url).toString();var v={};v=new URL("3tab@1x.9ee26a87.jpg",import.meta.url).toString();var y={};y=new URL("3mob@1x.6bd378f8.jpg",import.meta.url).toString();var x={};x=new URL("4desk@1x.345a1318.jpg",import.meta.url).toString();var b={};b=new URL("4tab@1x.cf493627.jpg",import.meta.url).toString();var S={};S=new URL("4mob@1x.2afe27c2.jpg",import.meta.url).toString();var w={};w=new URL("5desk@1x.6181253e.jpg",import.meta.url).toString();var E={};E=new URL("5tab@1x.d3bf8586.jpg",import.meta.url).toString();var H={};H=new URL("5mob@1x.33de1c8f.jpg",import.meta.url).toString();var T={};T=new URL("6desk@1x.22c4d2ad.jpg",import.meta.url).toString();var k={};k=new URL("6tab@1x.b1cfdde8.jpg",import.meta.url).toString();var R={};R=new URL("6mob@1x.4ca7edf6.jpg",import.meta.url).toString();var j={};j=new URL("7desk@1x.bd263f1b.jpg",import.meta.url).toString();var A={};A=new URL("7tab@1x.3cc9ea70.jpg",import.meta.url).toString();var C={};C=new URL("7mob@1x.f672273d.jpg",import.meta.url).toString();var L={};L=new URL("8desk@1x.0fe487a9.jpg",import.meta.url).toString();var _={};_=new URL("8tab@1x.fa92e96a.jpg",import.meta.url).toString();var P={};P=new URL("8mob@1x.ada5ba30.jpg",import.meta.url).toString();var D={};D=new URL("9desk@1x.3627d42f.jpg",import.meta.url).toString();var F={};F=new URL("9tab@1x.78c3aa74.jpg",import.meta.url).toString();var N={};N=new URL("9mob@1x.9c41dce6.jpg",import.meta.url).toString();var q={};q=new URL("10desk@1x.bf93d187.jpg",import.meta.url).toString();var U={};U=new URL("10tab@1x.bc96d452.jpg",import.meta.url).toString();var O={};O=new URL("10mob@1x.5c2e3975.jpg",import.meta.url).toString();var M={};M=new URL("11desk@1x.016fce68.jpg",import.meta.url).toString();var $={};$=new URL("11tab@1x.cedb6327.jpg",import.meta.url).toString();var I={};I=new URL("11mob@1x.72753896.jpg",import.meta.url).toString();var W={};W=new URL("12desk@1x.ab64a7f3.jpg",import.meta.url).toString();var B={};B=new URL("12tab@1x.a6cc30bb.jpg",import.meta.url).toString(),new URL("12mob@1x.d8f79aaf.jpg",import.meta.url).toString();var z={};z=new URL("13desk@1x.dbe006b3.jpg",import.meta.url).toString();var X={};X=new URL("13tab@1x.409b8dde.jpg",import.meta.url).toString();var Q={};Q=new URL("13mob@1x.d7b3fe15.jpg",import.meta.url).toString();var V={};V=new URL("1desk@2x.5703d9b4.jpg",import.meta.url).toString();var J={};J=new URL("1tab@2x.673653b2.jpg",import.meta.url).toString();var G={};G=new URL("1mob@2x.69785b6f.jpg",import.meta.url).toString();var Y={};Y=new URL("2desk@2x.8c19d163.jpg",import.meta.url).toString();var K={};K=new URL("2tab@2x.18bde6d7.jpg",import.meta.url).toString();var Z={};Z=new URL("2mob@2x.6f894f8f.jpg",import.meta.url).toString();var ee={};ee=new URL("3desk@2x.c58e2d86.jpg",import.meta.url).toString();var et={};et=new URL("3tab@2x.5b680e31.jpg",import.meta.url).toString();var en={};en=new URL("3mob@2x.f34a86fa.jpg",import.meta.url).toString();var er={};er=new URL("4desk@2x.967ef7e1.jpg",import.meta.url).toString();var eo={};eo=new URL("4tab@2x.a2fd7cc6.jpg",import.meta.url).toString();var ei={};ei=new URL("4mob@2x.eaaaa84d.jpg",import.meta.url).toString();var ea={};ea=new URL("5desk@2x.d42ed89e.jpg",import.meta.url).toString();var es={};es=new URL("5tab@2x.efacb099.jpg",import.meta.url).toString();var eu={};eu=new URL("5mob@2x.e176f762.jpg",import.meta.url).toString();var el={};el=new URL("6desk@2x.fefc695a.jpg",import.meta.url).toString();var ec={};ec=new URL("6tab@2x.51635a43.jpg",import.meta.url).toString();var ep={};ep=new URL("6mob@2x.5df99d17.jpg",import.meta.url).toString();var ed={};ed=new URL("7desk@2x.e64cb8f6.jpg",import.meta.url).toString();var ef={};ef=new URL("7tab@2x.84e640e3.jpg",import.meta.url).toString();var eh={};eh=new URL("7mob@2x.90eaadbf.jpg",import.meta.url).toString();var em={};em=new URL("8desk@2x.af305e8d.jpg",import.meta.url).toString();var eg={};eg=new URL("8tab@2x.7a0607cf.jpg",import.meta.url).toString();var ev={};ev=new URL("8mob@2x.ac4ff740.jpg",import.meta.url).toString();var ey={};ey=new URL("9desk@2x.600598e0.jpg",import.meta.url).toString();var ex={};ex=new URL("9tab@2x.d69c0800.jpg",import.meta.url).toString();var eb={};eb=new URL("9mob@2x.5198122d.jpg",import.meta.url).toString();var eS={};eS=new URL("10desk@2x.6e9ab827.jpg",import.meta.url).toString();var ew={};ew=new URL("10tab@2x.00d99014.jpg",import.meta.url).toString();var eE={};eE=new URL("10mob@2x.e4aef60c.jpg",import.meta.url).toString();var eH={};eH=new URL("11desk@2x.be416a78.jpg",import.meta.url).toString();var eT={};eT=new URL("11tab@2x.ac7bf444.jpg",import.meta.url).toString();var ek={};ek=new URL("11mob@2x.89239162.jpg",import.meta.url).toString();var eR={};eR=new URL("12desk@2x.c75ee5fa.jpg",import.meta.url).toString();var ej={};ej=new URL("12tab@2x.b1dde642.jpg",import.meta.url).toString();var eA={};eA=new URL("12mob@2x.c4f0f812.jpg",import.meta.url).toString();var eC={};eC=new URL("13desk@2x.60df23ce.jpg",import.meta.url).toString();var eL={};eL=new URL("13tab@2x.fe1c9190.jpg",import.meta.url).toString();var e_={};e_=new URL("13mob@2x.e9966fb3.jpg",import.meta.url).toString();const eP=[{id:1,deskPhoto:/*@__PURE__*/t(c),tabPhoto:/*@__PURE__*/t(p),mobPhoto:/*@__PURE__*/t(d),deskPhoto2x:/*@__PURE__*/t(V),tabPhoto2x:/*@__PURE__*/t(J),mobPhoto2x:/*@__PURE__*/t(G),// photo: desk1x1,
 // photo2x: g1x2,
-title:"Misha",alt:"tort dlya Mishy",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:2,deskPhoto:/*@__PURE__*/t(y),tabPhoto:/*@__PURE__*/t(b),mobPhoto:/*@__PURE__*/t(x),deskPhoto2x:/*@__PURE__*/t(en),tabPhoto2x:/*@__PURE__*/t(er),mobPhoto2x:/*@__PURE__*/t(eo),// photo: g2,
-title:"",alt:"",description:"July 2023"},{id:3,deskPhoto:/*@__PURE__*/t(S),tabPhoto:/*@__PURE__*/t(w),mobPhoto:/*@__PURE__*/t(E),deskPhoto2x:/*@__PURE__*/t(ei),tabPhoto2x:/*@__PURE__*/t(ea),mobPhoto2x:/*@__PURE__*/t(es),// photo: g3,
-title:"",alt:"",description:"July 2023"},{id:4,deskPhoto:/*@__PURE__*/t(H),tabPhoto:/*@__PURE__*/t(T),mobPhoto:/*@__PURE__*/t(k),deskPhoto2x:/*@__PURE__*/t(eu),tabPhoto2x:/*@__PURE__*/t(el),mobPhoto2x:/*@__PURE__*/t(ec),// photo: g4,
-title:"",alt:"",description:"July 2023"},{id:5,deskPhoto:/*@__PURE__*/t(R),tabPhoto:/*@__PURE__*/t(j),mobPhoto:/*@__PURE__*/t(A),deskPhoto2x:/*@__PURE__*/t(ep),tabPhoto2x:/*@__PURE__*/t(ed),mobPhoto2x:/*@__PURE__*/t(ef),// photo: g5,
-title:"",alt:"",description:"July 2023"},{id:6,deskPhoto:/*@__PURE__*/t(L),tabPhoto:/*@__PURE__*/t(_),mobPhoto:/*@__PURE__*/t(C),deskPhoto2x:/*@__PURE__*/t(eh),tabPhoto2x:/*@__PURE__*/t(em),mobPhoto2x:/*@__PURE__*/t(eg),// photo: g6,
-title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:7,deskPhoto:/*@__PURE__*/t(P),tabPhoto:/*@__PURE__*/t(D),mobPhoto:/*@__PURE__*/t(F),deskPhoto2x:/*@__PURE__*/t(ev),tabPhoto2x:/*@__PURE__*/t(ey),mobPhoto2x:/*@__PURE__*/t(eb),// photo: g7,
-title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:8,deskPhoto:/*@__PURE__*/t(q),tabPhoto:/*@__PURE__*/t(N),mobPhoto:/*@__PURE__*/t(U),deskPhoto2x:/*@__PURE__*/t(ex),tabPhoto2x:/*@__PURE__*/t(eS),mobPhoto2x:/*@__PURE__*/t(ew),// photo: g8,
-title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:9,deskPhoto:/*@__PURE__*/t(O),tabPhoto:/*@__PURE__*/t(M),mobPhoto:/*@__PURE__*/t($),deskPhoto2x:/*@__PURE__*/t(eE),tabPhoto2x:/*@__PURE__*/t(eH),mobPhoto2x:/*@__PURE__*/t(eT),// photo: g9,
-title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:10,deskPhoto:/*@__PURE__*/t(I),tabPhoto:/*@__PURE__*/t(W),mobPhoto:/*@__PURE__*/t(B),deskPhoto2x:/*@__PURE__*/t(ek),tabPhoto2x:/*@__PURE__*/t(eR),mobPhoto2x:/*@__PURE__*/t(ej),// photo: g10,
-title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:11,deskPhoto:/*@__PURE__*/t(z),tabPhoto:/*@__PURE__*/t(X),mobPhoto:/*@__PURE__*/t(Q),deskPhoto2x:/*@__PURE__*/t(eA),tabPhoto2x:/*@__PURE__*/t(eL),mobPhoto2x:/*@__PURE__*/t(e_),// photo: g11,
-title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:12,deskPhoto:/*@__PURE__*/t(V),tabPhoto:/*@__PURE__*/t(J),mobPhoto:/*@__PURE__*/t(eC),// deskPhoto2x: desk12x2,
-// tabPhoto2x: tab12x2,
-// mobPhoto2x: mob12x2,
-// photo: g12,
-title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:13,deskPhoto:/*@__PURE__*/t(G),tabPhoto:/*@__PURE__*/t(Y),mobPhoto:/*@__PURE__*/t(K),// deskPhoto2x: desk13x2,
-// tabPhoto2x: tab13x2,
-// mobPhoto2x: mob13x2,
-// photo: g13,
+title:"Misha",alt:"tort dlya Mishy",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:2,deskPhoto:/*@__PURE__*/t(f),tabPhoto:/*@__PURE__*/t(h),mobPhoto:/*@__PURE__*/t(m),deskPhoto2x:/*@__PURE__*/t(Y),tabPhoto2x:/*@__PURE__*/t(K),mobPhoto2x:/*@__PURE__*/t(Z),// photo: g2,
+title:"",alt:"",description:"July 2023"},{id:3,deskPhoto:/*@__PURE__*/t(g),tabPhoto:/*@__PURE__*/t(v),mobPhoto:/*@__PURE__*/t(y),deskPhoto2x:/*@__PURE__*/t(ee),tabPhoto2x:/*@__PURE__*/t(et),mobPhoto2x:/*@__PURE__*/t(en),// photo: g3,
+title:"",alt:"",description:"July 2023"},{id:4,deskPhoto:/*@__PURE__*/t(x),tabPhoto:/*@__PURE__*/t(b),mobPhoto:/*@__PURE__*/t(S),deskPhoto2x:/*@__PURE__*/t(er),tabPhoto2x:/*@__PURE__*/t(eo),mobPhoto2x:/*@__PURE__*/t(ei),// photo: g4,
+title:"",alt:"",description:"July 2023"},{id:5,deskPhoto:/*@__PURE__*/t(w),tabPhoto:/*@__PURE__*/t(E),mobPhoto:/*@__PURE__*/t(H),deskPhoto2x:/*@__PURE__*/t(ea),tabPhoto2x:/*@__PURE__*/t(es),mobPhoto2x:/*@__PURE__*/t(eu),// photo: g5,
+title:"",alt:"",description:"July 2023"},{id:6,deskPhoto:/*@__PURE__*/t(T),tabPhoto:/*@__PURE__*/t(k),mobPhoto:/*@__PURE__*/t(R),deskPhoto2x:/*@__PURE__*/t(el),tabPhoto2x:/*@__PURE__*/t(ec),mobPhoto2x:/*@__PURE__*/t(ep),// photo: g6,
+title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:7,deskPhoto:/*@__PURE__*/t(j),tabPhoto:/*@__PURE__*/t(A),mobPhoto:/*@__PURE__*/t(C),deskPhoto2x:/*@__PURE__*/t(ed),tabPhoto2x:/*@__PURE__*/t(ef),mobPhoto2x:/*@__PURE__*/t(eh),// photo: g7,
+title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:8,deskPhoto:/*@__PURE__*/t(L),tabPhoto:/*@__PURE__*/t(_),mobPhoto:/*@__PURE__*/t(P),deskPhoto2x:/*@__PURE__*/t(em),tabPhoto2x:/*@__PURE__*/t(eg),mobPhoto2x:/*@__PURE__*/t(ev),// photo: g8,
+title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:9,deskPhoto:/*@__PURE__*/t(D),tabPhoto:/*@__PURE__*/t(F),mobPhoto:/*@__PURE__*/t(N),deskPhoto2x:/*@__PURE__*/t(ey),tabPhoto2x:/*@__PURE__*/t(ex),mobPhoto2x:/*@__PURE__*/t(eb),// photo: g9,
+title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:10,deskPhoto:/*@__PURE__*/t(q),tabPhoto:/*@__PURE__*/t(U),mobPhoto:/*@__PURE__*/t(O),deskPhoto2x:/*@__PURE__*/t(eS),tabPhoto2x:/*@__PURE__*/t(ew),mobPhoto2x:/*@__PURE__*/t(eE),// photo: g10,
+title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:11,deskPhoto:/*@__PURE__*/t(M),tabPhoto:/*@__PURE__*/t($),mobPhoto:/*@__PURE__*/t(I),deskPhoto2x:/*@__PURE__*/t(eH),tabPhoto2x:/*@__PURE__*/t(eT),mobPhoto2x:/*@__PURE__*/t(ek),// photo: g11,
+title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:12,deskPhoto:/*@__PURE__*/t(W),tabPhoto:/*@__PURE__*/t(B),mobPhoto:/*@__PURE__*/t(eA),deskPhoto2x:/*@__PURE__*/t(eR),tabPhoto2x:/*@__PURE__*/t(ej),mobPhoto2x:/*@__PURE__*/t(eA),// photo: g12,
+title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"},{id:13,deskPhoto:/*@__PURE__*/t(z),tabPhoto:/*@__PURE__*/t(X),mobPhoto:/*@__PURE__*/t(Q),deskPhoto2x:/*@__PURE__*/t(eC),tabPhoto2x:/*@__PURE__*/t(eL),mobPhoto2x:/*@__PURE__*/t(e_),// photo: g13,
 title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis providentat"}],eD={gallery:document.querySelector(".container__gallery")};console.log(eP),function(){let e=eP.map(({id:e,deskPhoto:t,deskPhoto2x:n,tabPhoto:r,tabPhoto2x:o,mobPhoto:i,mobPhoto2x:a,alt:s,title:u,description:l})=>`        
             <li class="card" key=${e}>                
                 
@@ -1346,6 +1359,6 @@ title:"",alt:"",description:"Lorem ipsum dolor sit amet consectetur adipisicing 
                     </div>
                  
             </li>        
-        `).join("");eD.gallery.insertAdjacentHTML("beforeend",e)}(eP),document.getElementById("contactForm").addEventListener("submit",async function(e){e.preventDefault();let t=e.target,n=new FormData(t),r={};console.log(r),n.forEach((e,t)=>{r[t]=e});try{let e=await fetch("https://cakes-backend.onrender.com/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(r)});e.ok?alert("Заказ успішно надіслано!"):alert("Сталася помилка при надсиланні заказу.")}catch(e){console.error("Помилка:",e),alert("Сталася помилка при надсиланні заказу.")}}),document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll(".about-item");console.log(e);let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting?e.target.classList.add("visible"):e.target.classList.remove("visible")})},{threshold:.1});e.forEach(e=>{t.observe(e)})});//# sourceMappingURL=index.bd03fd1d.js.map
+        `).join("");eD.gallery.insertAdjacentHTML("beforeend",e)}(eP),document.getElementById("contactForm").addEventListener("submit",async function(e){e.preventDefault();let t=e.target,n=new FormData(t),r={};console.log(r),n.forEach((e,t)=>{r[t]=e});try{let e=await fetch("https://cakes-backend.onrender.com/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(r)});e.ok?alert("Заказ успішно надіслано!"):alert("Сталася помилка при надсиланні заказу.")}catch(e){console.error("Помилка:",e),alert("Сталася помилка при надсиланні заказу.")}}),document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll(".about-item");console.log(e);let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting?e.target.classList.add("visible"):e.target.classList.remove("visible")})},{threshold:.1});e.forEach(e=>{t.observe(e)})});//# sourceMappingURL=index.f12256a0.js.map
 
-//# sourceMappingURL=index.bd03fd1d.js.map
+//# sourceMappingURL=index.f12256a0.js.map
