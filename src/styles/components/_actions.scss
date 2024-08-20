@@ -91,9 +91,9 @@
         #131313 100%);
     outline: 3px solid #000;
     z-index: 99;
-    transform-style: preserve-3d;
-    transform: translateZ(10px);
-    perspective: 0;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: translateZ(10px);
+    -webkit-perspective: 0;
     @media screen and (min-width:768px) {
         width: 12px;
     }
@@ -197,7 +197,7 @@
 }
 
 .top.new .text {
-    backface-visibility: hidden;
+    // -webkit-backface-visibility: hidden;
 }
 
 .top.new:before {
@@ -234,20 +234,20 @@
     position: absolute;
     top: 0;
     height: calc(100% - 0px);
-    transform: rotateX(0.5turn);
+    -webkit-transform: rotateX(0.5turn);
     // backface-visibility: hidden; 
     z-index: 1;
     opacity: 0;
 }
 
 .flipper.flipping .top.new {
-    transform-origin: bottom center;
-    transform: rotateX(-180deg) translateY(-10px); 
-    animation: rotate var(--rotationtime) 1 ease-in-out forwards;
+    -webkit-transform-origin: bottom center;
+    -webkit-transform: rotateX(-180deg) translateY(-10px); 
+    -webkit-animation: rotate var(--rotationtime) 1 ease-in-out forwards;
 }
 
 .flipper.flipping .bottom.new {
-    animation: rotatebottom var(--rotationtime) 1 ease-in-out forwards;
+    -webkit-animation: rotatebottom var(--rotationtime) 1 ease-in-out forwards;
 }
 
 @keyframes rotatebottom {
@@ -270,10 +270,10 @@
 
 @keyframes rotate {
     0% {
-        transform: rotateX(0) translateY(0px);
+        -webkit-transform: rotateX(0) translateY(0px);
     }
 
     100% {
-        transform: rotateX(-180deg) translateY(-10px);
+        -webkit-transform: rotateX(-180deg) translateY(-10px);
     }
 }

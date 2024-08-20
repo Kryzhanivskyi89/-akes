@@ -5,78 +5,69 @@
             <ul class=contact-list>
                 <li class=contact-item>
                     <h3 class=contact-title>Телефон:</h3>
-                    <a class=contact__link href="tel:+380983974983" target="_blank">
-                        <span>380983974983</span>
-                    </a>
-                    <a class=contact__link href="tel:+380981234567" target="_blank">
-                        <span>380931234567</span>
-                    </a>
+                    <a class=contact__link href="tel:+380983974983" target="_blank">+380983974983</a>
+                    <a class=contact__link href="tel:+380981234567" target="_blank">+380931234567</a>
                 </li>
                 <li class=contact-item>
                     <h3 class=contact-title>E-mail:</h3>
-                    <a class=contact__link href="mailto:andrew.506@ukr.net" target="_blank">
-                        <span>andrew.506@ukr.net</span>
-                    </a>
+                    <a class=contact__link href="mailto:andrew.506@ukr.net" target="_blank">andrew.506@ukr.net</a>
                 </li>
                 <li class=contact-item>
                     <h3 class=contact-title>Адреса:</h3>
-                    <a class=contact__link href="https://maps.app.goo.gl/4wEMGGNfCrechPkS6" target="_blank" rel="noopener noreferrer nofollow">
-                        <span>
-                            Україна, м. Київ, вул. Джохара Дудаєва, 6
-                        </span>
+                    <a 
+                        class=contact__link
+                        href="https://maps.app.goo.gl/4wEMGGNfCrechPkS6" 
+                        target="_blank" 
+                        rel="noopener noreferrer nofollow">м. Київ, вул. Джохара Дудаєва, 6
                     </a>
                 </li>
                 <li class=contact-item>
                     <h3 class=contact-title>Соціальні мережі:</h3>
                     <div class=contact__socialLinkWrapper>
-                        <a aria-label="open facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100021661202474">
-                            <svg class="social__svg" width="20px" height="20px">
+                        <a class=contact__socialLink aria-label="open facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100021661202474">
+                            <svg class="social__svg" width="30px" height="20px">
                                 <use href="./images/icons.svg#icon-facebook"></use>
                             </svg>
-                            <span class="tooltip">Facebook</span>
                         </a>
                         
-                        <a aria-label="open instagram" target="_blank" href="https://www.instagram.com/switlana_cake/">
-                            <svg class="social__svg" width="20px" height="20px">
+                        <a class=contact__socialLink aria-label="open instagram" target="_blank" href="https://www.instagram.com/switlana_cake/">
+                            <svg class="social__svg" width="30px" height="20px">
                                 <use href="./images/icons.svg#icon-instagram"></use>
                             </svg>
-                            <span class="tooltip">Instagram</span>
                         </a>
 
                         <a aria-label="open telegram" target="_blank"  href="">
                             <svg class="social__svg" width="30px" height="30px">
                                 <use href="./images/icons.svg#icon-telegram"></use>
                             </svg>
-                            <span class="tooltip">Telegram</span>
                         </a>
                     </div>
                 </li>
             </ul>
         
             <form class=contact__form id="contactForm">
-                <div class=contact__labelsWrapper>
+                <fieldset class=contact__labelsWrapper>
+                    <h3 class=contact__formTitle>
+                        Зробити замовлення
+                    </h3>
                     <label class=contact__formLabel>
-                        <p class=contact__formTitle>* Ваше імя:</p>
-                        <input class="contact__formInput" type="text" name="name" placeholder="ім'я" required />
-                        <ErrorMessage class=contact__formError component="p" name="name" />
+                        <span class=contact__formName>Імя:</span>
+                        <input class="contact__formInput" type="text" name="name" required />
+                        <!-- <ErrorMessage class=contact__formError component="p" name="name" /> -->
                     </label>
-                    <!-- <label class=contact__formLabel>
-                                        <p class=contact__formTitle>* E-mail:</p>
-                                        <input class=contact__formInput
-                                            type="email" name="email" placeholder="johnrosie@gmail.com" />
-                                        <ErrorMessage class=contact__formError component="p" name="email" />
-                                    </label> -->
+
                     <label class=contact__formLabel>
-                        <p class=contact__formTitle>* Телефон:</p>
-                        <input class="contact__formInput" type="text" name="phone" placeholder="380961234567" required />
-                        <ErrorMessage class=contact__formError component="p" name="phone" />
+                        <span class=contact__formName>Телефон:</span>
+                        <input class="contact__formInput" type="text" name="phone" required />
+                        <!-- <ErrorMessage class=contact__formError component="p" name="phone" /> -->
                     </label>
                     <label class=contact__formLabel>
-                        <p class=contact__formTitle>Ваші побажання:</p>
+                        <span class=contact__formName>Ваші побажання:</span>
                         <input class=contact__formText type="text" name="description" placeholder="Введіть свої побажання"
                             as="textarea" />
                     </label>
-                </div>
+
+                </fieldset>
                 <button class=contact__formSubmit type="submit">
                     Відправити
                 </button>
