@@ -1,99 +1,59 @@
-# Parcel template
+**1. Work Gallery:**
 
-Этот проект был создан при помощи Parcel. Для знакомства и настройки
-дополнительных возможностей [обратись к документации](https://parceljs.org/).
+Developed an interactive gallery showcasing confectionery products with
+high-quality photos and detailed descriptions. Users can browse the creations
+and explore various product categories.
 
-## Подготовка нового проекта
+**2. Responsive Design and Retina Support:**
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Склонируй этот репозиторий.
-3. Измени имя папки с `parcel-project-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи зависимости проекта в терминале командой `npm install` .
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:1234](http://localhost:1234).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+Ensured the site looked flawless across all devices, from mobile phones to
+desktops, with support for high-pixel-density (Retina) displays. Used responsive
+design techniques to provide a seamless experience on any screen.
 
-## Файлы и папки
+**3. Promotional Timer:**
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  файлы стилей страниц. Например, для `index.html` файл стилей называется
-  `index.scss`.
-- Изображения добавляй в папку `src/images`. Сборщик оптимизирует их, но только
-  при деплое продакшн версии проекта. Все это происходит в облаке, чтобы не
-  нагружать твой компьютер, так как на слабых машинах это может занять много
-  времени.
+Implemented a promotional timer feature that automatically counts down the time
+until special offers end. This creates a sense of urgency and encourages users
+to make quick purchasing decisions.
 
-## Деплой
+**4. Slider in the Hero Section:**
 
-Для настройки деплоя проекта необходимо выполнить несколько дополнительных шагов
-по настройке твоего репозитория. Зайди во вкладку `Settings` и в подсекции
-`Actions` выбери выбери пункт `General`.
+Added a slider to the Hero section, automatically displaying images of the
+confectionery creation process. This element grabs visitors’ attention
+immediately and adds a dynamic touch to the site.
 
-![GitHub actions settings](./assets/actions-config-step-1.png)
+**5. Animated “About Us” Section:**
 
-Пролистай страницу до последней секции, в которой убедись что выбраны опции как
-на следующем изображении и нажми `Save`. Без этих настроек у сборки будет
-недостаточно прав для автоматизации процесса деплоя.
+Created an animated section presenting key information about the company,
+including its history, philosophy, and values. The animation provides an
+engaging experience for users and helps build a positive brand image.
 
-![GitHub actions settings](./assets/actions-config-step-2.png)
+**6. Backend Integration:**
 
-Продакшн версия проекта будет автоматически собираться и деплоиться на GitHub
-Pages, в ветку `gh-pages`, каждый раз когда обновляется ветка `main`. Например,
-после прямого пуша или принятого пул-реквеста. Для этого необходимо в файле
-`package.json` отредактировать поле `homepage` и скрипт `build`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+Integrated the site with a MongoDB database for efficient order management and
+customer information handling. Also, a feature that automatically sends order
+confirmations to customers via email using Nodemailer was implemented.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /your_repo_name/"
-},
-```
+**7. Contact Section:**
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+Developed a section with detailed contact information, including direct links to
+social media. This makes it easy for customers to connect with the company and
+increases its accessibility.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+**8. Enhanced UX/UI:**
 
-### Статус деплоя
+Focused on delivering a superior user experience (UX) and user interface (UI),
+ensuring simple and intuitive navigation. The site features a modern, attractive
+design that adheres to the best practices in web development.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+**9. Performance Optimization:**
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+Conducted optimizations to improve page load times and resource management,
+significantly boosting the site’s speed, especially on mobile devices. This
+enhances user experience and positively impacts the site’s search engine
+ranking.
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+**10. SEO Support:**
 
-![Deployment status](./assets/status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` или скрипта `build` в
-файле `package.json`.
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+Implemented basic SEO support, including optimization of meta tags, keywords,
+and descriptions, to improve the site’s visibility in search engines.
